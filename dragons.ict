@@ -261,7 +261,7 @@ textures:
     isBlank: false
     group: !<tag:yaml.org,2002:js/undefined> ''
     source: /Users/frog/Desktop/my games/ocean.png
-  - lastmod: 1706943323094
+  - lastmod: 1706945866880
     type: texture
     name: sky
     untill: 0
@@ -406,18 +406,6 @@ templates:
     extends: {}
     lastmod: 1706943258691
     uid: N4DzhtjtR36hB1
-  - type: template
-    name: sky
-    depth: 0
-    texture: QtLjNB61tWjMwj
-    playAnimationOnStart: false
-    loopAnimation: true
-    animationFPS: 30
-    visible: true
-    events: []
-    extends: {}
-    lastmod: 1706943261073
-    uid: jFdFJCTTDr2FRW
 sounds: []
 styles: []
 fonts: []
@@ -431,8 +419,8 @@ rooms:
     gridY: 64
     diagonalGrid: false
     simulate: true
-    width: 1024
-    height: 576
+    width: 1280
+    height: 720
     restrictCamera: false
     restrictMaxX: 1280
     restrictMinX: 1280
@@ -457,7 +445,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1706940881237
+    lastmod: 1706944143775
     events:
       - eventKey: OnRoomStart
         code: >-
@@ -504,8 +492,8 @@ rooms:
     gridY: 64
     diagonalGrid: false
     simulate: true
-    width: 1024
-    height: 576
+    width: 1280
+    height: 720
     restrictCamera: false
     restrictMaxX: 1280
     restrictMinX: 1280
@@ -516,7 +504,7 @@ rooms:
     backgroundColor: '#C6DDF7'
     follow: -1
     backgrounds:
-      - depth: 0
+      - depth: -5
         texture: QtLjNB61tWjMwj
         shiftX: 0
         shiftY: 0
@@ -524,12 +512,12 @@ rooms:
         parallaxY: 1
         movementX: 0
         movementY: 0
-        scaleX: 1
-        scaleY: 1
-        repeat: repeat
+        scaleX: 1.3
+        scaleY: 1.2
+        repeat: no-repeat
     copies:
       - x: -64
-        'y': 384
+        'y': 512
         opacity: 1
         tint: 16777215
         scale:
@@ -540,19 +528,52 @@ rooms:
         exts: {}
         customProperties: {}
       - x: -64
-        'y': 448
+        'y': 576
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1.2137931
+          'y': 0.9915753
+        rotation: 0
+        uid: N4DzhtjtR36hB1
+        exts: {}
+        customProperties: {}
+      - x: 1216
+        'y': 576
         opacity: 1
         tint: 16777215
         scale:
           x: 1
           'y': 1
         rotation: 0
-        uid: N4DzhtjtR36hB1
+        uid: CNq3nTNMfn1HtG
+        exts: {}
+        customProperties: {}
+      - x: 1088
+        'y': 640
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: CNq3nTNMfn1HtG
+        exts: {}
+        customProperties: {}
+      - x: 896
+        'y': 576
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: CNq3nTNMfn1HtG
         exts: {}
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1706943307359
+    lastmod: 1706945957463
     events:
       - eventKey: OnRoomStart
         code: inGameRoomStart(this);
@@ -568,8 +589,8 @@ rooms:
     gridY: 64
     diagonalGrid: false
     simulate: true
-    width: 1024
-    height: 576
+    width: 1280
+    height: 720
     restrictCamera: false
     restrictMaxX: 1280
     restrictMinX: 1280
@@ -594,7 +615,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1706935212133
+    lastmod: 1706944119491
     events:
       - eventKey: OnRoomStart
         code: |-
@@ -632,8 +653,8 @@ rooms:
     gridY: 64
     diagonalGrid: false
     simulate: true
-    width: 1024
-    height: 576
+    width: 1280
+    height: 720
     restrictCamera: false
     restrictMaxX: 1280
     restrictMinX: 1280
@@ -658,7 +679,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1706935254860
+    lastmod: 1706944134310
     events: []
     uid: 3kN7wdFdNd5LNg
 actions: []
@@ -670,7 +691,7 @@ scripts:
           // import news feed GUI into another room
           ct.rooms.append('layerUI');
       }
-startroom: 7fPKrBNkQk95RG
+startroom: zGWBmgK1bbgBRw
 contentTypes: []
 groups:
   fonts: []
