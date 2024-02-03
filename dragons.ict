@@ -129,7 +129,7 @@ textures:
     padding: 1
     isBlank: false
     group: !<tag:yaml.org,2002:js/undefined> ''
-  - lastmod: 1706935906537
+  - lastmod: 1706936585183
     type: texture
     name: t1
     untill: 0
@@ -137,22 +137,22 @@ textures:
       - 1
       - 1
     axis:
-      - 140
-      - 180
-    marginx: 0
+      - -3
+      - 360
+    marginx: 20
     marginy: 0
     imgWidth: 280
     imgHeight: 360
-    width: 280
+    width: 270
     height: 360
     offx: 0
     offy: 0
     origname: iW5RGLKjmh54c26.png
     shape: rect
-    left: 140
-    right: 140
-    top: 180
-    bottom: 180
+    left: -3
+    right: 273
+    top: 0
+    bottom: 0
     uid: W5RGLKjmh54c26
     padding: 1
     isBlank: false
@@ -258,7 +258,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1706936330957
+    lastmod: 1706936369300
     events:
       - eventKey: OnRoomStart
         code: >-
