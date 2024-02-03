@@ -72,35 +72,6 @@ textures:
     isBlank: false
     group: !<tag:yaml.org,2002:js/undefined> ''
     tiled: false
-  - lastmod: 1706935900950
-    type: texture
-    name: t old
-    untill: 0
-    grid:
-      - 1
-      - 1
-    axis:
-      - 149.6530612244898
-      - 203.9387755102041
-    marginx: 0
-    marginy: 0
-    imgWidth: 400
-    imgHeight: 600
-    width: 100
-    height: 200
-    offx: 0
-    offy: 0
-    origname: iNTzDkBz63dtnPz.png
-    shape: rect
-    left: 150
-    right: 150
-    top: 200
-    bottom: 200
-    uid: NTzDkBz63dtnPz
-    padding: 1
-    isBlank: false
-    group: !<tag:yaml.org,2002:js/undefined> ''
-    r: 150
   - lastmod: 1706933970776
     type: texture
     name: newsGui
@@ -157,6 +128,110 @@ textures:
     padding: 1
     isBlank: false
     group: !<tag:yaml.org,2002:js/undefined> ''
+  - lastmod: 1706941526238
+    type: texture
+    name: helicopter
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 52
+      - 42
+    marginx: 0
+    marginy: 0
+    imgWidth: 104
+    imgHeight: 84
+    width: 104
+    height: 84
+    offx: 0
+    offy: 0
+    origname: i8WBbCNbmdzN8QH.png
+    shape: rect
+    left: 52
+    right: 52
+    top: 42
+    bottom: 42
+    uid: 8WBbCNbmdzN8QH
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: /Users/frog/Downloads/kenney_space-shooter-redux/PNG/Enemies/enemyRed2.png
+  - lastmod: 1706941507739
+    type: texture
+    name: boat
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 41
+      - 42
+    marginx: 0
+    marginy: 0
+    imgWidth: 82
+    imgHeight: 84
+    width: 82
+    height: 84
+    offx: 0
+    offy: 0
+    origname: i6RNnPFtTjcD81R.png
+    shape: rect
+    left: 41
+    right: 41
+    top: 42
+    bottom: 42
+    uid: 6RNnPFtTjcD81R
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: >-
+      /Users/frog/Downloads/kenney_space-shooter-redux/PNG/Enemies/enemyGreen4.png
+  - lastmod: 1706941953538
+    type: texture
+    name: island_placeholder
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 8
+      - 3
+    marginx: 0
+    marginy: 0
+    imgWidth: 448
+    imgHeight: 162
+    width: 448
+    height: 162
+    offx: 0
+    offy: 0
+    origname: iG5PwPW3J76t9Jp.png
+    shape: strip
+    left: 8
+    right: 440
+    top: 3
+    bottom: 159
+    uid: G5PwPW3J76t9Jp
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: /Users/frog/Desktop/my games/island placeholder.png
+    stripPoints:
+      - x: -5.499999999999999
+        'y': 85.3
+      - x: 135.29999999999998
+        'y': 7.200000000000001
+      - x: 293.41618041992183
+        'y': -0.7814865112304688
+      - x: 401.21618041992184
+        'y': 46.51851348876952
+      - x: 434.21618041992184
+        'y': 98.21851348876952
+      - x: 406.71618041992184
+        'y': 158.71851348876953
+      - x: 53.616180419921875
+        'y': 156.51851348876954
+    closedStrip: true
 skeletons: []
 templates:
   - type: template
@@ -178,7 +253,7 @@ templates:
   - type: template
     name: t old
     depth: 0
-    texture: NTzDkBz63dtnPz
+    texture: -1
     playAnimationOnStart: false
     loopAnimation: true
     animationFPS: 30
@@ -245,8 +320,8 @@ rooms:
     follow: -1
     backgrounds: []
     copies:
-      - x: 1152
-        'y': 640
+      - x: 640
+        'y': 448
         opacity: 1
         tint: 16777215
         scale:
@@ -258,7 +333,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1706936369300
+    lastmod: 1706940881237
     events:
       - eventKey: OnRoomStart
         code: >-
