@@ -365,6 +365,7 @@ templates:
     events:
       - eventKey: OnCreate
         code: |-
+          this.scale = 0.5;
           this.speed = ct.random.range(1,3);
           this.direction = 180;
         arguments: {}
@@ -381,7 +382,7 @@ templates:
         arguments: {}
         lib: core
     extends: {}
-    lastmod: 1706990653556
+    lastmod: 1706992025987
     uid: CNq3nTNMfn1HtG
     group: Cj7NqcmNWpLT5L
   - type: template
@@ -423,7 +424,7 @@ templates:
           template: CNq3nTNMfn1HtG
         lib: place
     extends: {}
-    lastmod: 1706990590249
+    lastmod: 1706990727709
     uid: d7hdrmTn7DwQn3
   - type: template
     name: ocean
@@ -562,41 +563,8 @@ rooms:
         uid: N4DzhtjtR36hB1
         exts: {}
         customProperties: {}
-      - x: 1216
-        'y': 576
-        opacity: 1
-        tint: 16777215
-        scale:
-          x: 1
-          'y': 1
-        rotation: 0
-        uid: CNq3nTNMfn1HtG
-        exts: {}
-        customProperties: {}
-      - x: 1088
-        'y': 640
-        opacity: 1
-        tint: 16777215
-        scale:
-          x: 1
-          'y': 1
-        rotation: 0
-        uid: CNq3nTNMfn1HtG
-        exts: {}
-        customProperties: {}
-      - x: 896
-        'y': 576
-        opacity: 1
-        tint: 16777215
-        scale:
-          x: 1
-          'y': 1
-        rotation: 0
-        uid: CNq3nTNMfn1HtG
-        exts: {}
-        customProperties: {}
       - x: -190.71428571
-        'y': 452.12962963
+        'y': 516.12962963
         opacity: 1
         tint: 16777215
         scale:
@@ -608,10 +576,10 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1706990700114
+    lastmod: 1706992120708
     events:
       - eventKey: OnRoomStart
-        code: >-
+        code: >
           inGameRoomStart(this);
 
 
@@ -644,6 +612,11 @@ rooms:
           this.livesLabel.y = 10;
 
           this.livesLabel.depth = 1000;
+
+
+          // generate enemies over time
+
+          this.timer1 = 0.3;
         arguments: {}
         lib: core
       - eventKey: OnDraw
@@ -652,6 +625,16 @@ rooms:
           this.scoreLabel.text = 'Score: ' + this.score;
           this.livesLabel.text = 'Dragon Ore: ' + this.lives;
         arguments: {}
+        lib: core
+      - eventKey: Timer1
+        code: >-
+          this.timer1 = ct.random.range(0.3, 3);
+
+          ct.templates.copy('boat', ct.camera.width + 50,
+          ct.random.range(ct.camera.height - 50, ct.camera.height - 140));
+        arguments:
+          name: boats
+          isUi: false
         lib: core
     uid: zGWBmgK1bbgBRw
   - type: room
