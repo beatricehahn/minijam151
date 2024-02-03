@@ -1,0 +1,486 @@
+ctjsVersion: 3.3.0
+language: typescript
+notes: /* empty */
+libs:
+  place:
+    gridX: 1024
+    gridY: 1024
+  fittoscreen:
+    mode: scaleFit
+  pointer: {}
+  keyboard: {}
+  keyboard.polyfill: {}
+  sound.howler: {}
+  random: {}
+  transition: {}
+  tween: {}
+textures:
+  - lastmod: 1706923399581
+    type: texture
+    name: button to proceed
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 64
+    imgHeight: 32
+    width: 64
+    height: 32
+    offx: 0
+    offy: 0
+    origname: iF8Qw6dWbd48QM5.png
+    shape: rect
+    left: 0
+    right: 64
+    top: 0
+    bottom: 32
+    uid: F8Qw6dWbd48QM5
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+  - lastmod: 1706923397542
+    type: texture
+    name: Placeholder
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 64
+    imgHeight: 64
+    width: 64
+    height: 64
+    offx: 0
+    offy: 0
+    origname: izqbR7QpkkF4zQG.png
+    shape: rect
+    left: 0
+    right: 64
+    top: 0
+    bottom: 64
+    uid: zqbR7QpkkF4zQG
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    tiled: false
+  - lastmod: 1706935900950
+    type: texture
+    name: t old
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 149.6530612244898
+      - 203.9387755102041
+    marginx: 0
+    marginy: 0
+    imgWidth: 400
+    imgHeight: 600
+    width: 100
+    height: 200
+    offx: 0
+    offy: 0
+    origname: iNTzDkBz63dtnPz.png
+    shape: rect
+    left: 150
+    right: 150
+    top: 200
+    bottom: 200
+    uid: NTzDkBz63dtnPz
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    r: 150
+  - lastmod: 1706933970776
+    type: texture
+    name: newsGui
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 200
+    imgHeight: 150
+    width: 200
+    height: 150
+    offx: 0
+    offy: 0
+    origname: iJ5DKdTLgbF765K.png
+    shape: rect
+    left: 0
+    right: 200
+    top: 0
+    bottom: 150
+    uid: J5DKdTLgbF765K
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+  - lastmod: 1706935906537
+    type: texture
+    name: t1
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 140
+      - 180
+    marginx: 0
+    marginy: 0
+    imgWidth: 280
+    imgHeight: 360
+    width: 280
+    height: 360
+    offx: 0
+    offy: 0
+    origname: iW5RGLKjmh54c26.png
+    shape: rect
+    left: 140
+    right: 140
+    top: 180
+    bottom: 180
+    uid: W5RGLKjmh54c26
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+skeletons: []
+templates:
+  - type: template
+    name: button to proceed
+    depth: 0
+    texture: F8Qw6dWbd48QM5
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events:
+      - eventKey: OnPointerClick
+        code: ct.rooms.switch('level01');
+        arguments: {}
+        lib: core
+    extends: {}
+    lastmod: 1706923275375
+    uid: LhNf3TC4gNPQjn
+  - type: template
+    name: t old
+    depth: 0
+    texture: NTzDkBz63dtnPz
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events: []
+    extends: {}
+    lastmod: 1706936364562
+    uid: qdFP6Gq3pNqTb3
+  - type: template
+    name: newsGui
+    depth: 0
+    texture: J5DKdTLgbF765K
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events:
+      - eventKey: OnStep
+        lib: core
+        code: this.move();
+        arguments: {}
+    extends: {}
+    lastmod: 1706934002040
+    uid: kWfHdqmFFbWf9P
+  - type: template
+    name: panel1
+    depth: 0
+    texture: W5RGLKjmh54c26
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events:
+      - eventKey: OnStep
+        lib: core
+        code: this.move();
+        arguments: {}
+    extends: {}
+    lastmod: 1706936326844
+    uid: qhd7BDQ1KhJ6q3
+sounds: []
+styles: []
+fonts: []
+rooms:
+  - type: room
+    oncreate: ''
+    onstep: ''
+    ondraw: ''
+    onleave: ''
+    gridX: 64
+    gridY: 64
+    diagonalGrid: false
+    simulate: true
+    width: 1024
+    height: 576
+    restrictCamera: false
+    restrictMaxX: 1280
+    restrictMinX: 1280
+    restrictMaxY: 720
+    restrictMinY: 720
+    isUi: false
+    name: prologue cutscene
+    backgroundColor: '#FFC9C9'
+    follow: -1
+    backgrounds: []
+    copies:
+      - x: 1152
+        'y': 640
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: LhNf3TC4gNPQjn
+        exts: {}
+        customProperties: {}
+    tiles: []
+    extends: {}
+    lastmod: 1706936330957
+    events:
+      - eventKey: OnRoomStart
+        code: >-
+          // when room starts, begin bringing up cutscenes
+
+          this.timer1 = 0.5;
+
+
+          // show one picture on top left corner
+
+          //var panel1x = 200;
+
+          var panel1y = 236;
+
+
+          // second panel
+
+          ct.templates.copy('panel1', (190 + 140 + 40 + 140), panel1y)
+
+
+
+          // third panel
+
+          ct.templates.copy('panel1', (190 + 140 + 40 + 140 + 40 + 140),
+          panel1y);
+        arguments: {}
+        lib: core
+      - eventKey: Timer1
+        code: |-
+          var panel1y = 236;
+          //ct.transition.fadeIn();
+          ct.templates.copy('panel1', 190, panel1y);
+        arguments:
+          name: panel1
+          isUi: false
+        lib: core
+    uid: 7fPKrBNkQk95RG
+  - type: room
+    oncreate: ''
+    onstep: ''
+    ondraw: ''
+    onleave: ''
+    gridX: 64
+    gridY: 64
+    diagonalGrid: false
+    simulate: true
+    width: 1024
+    height: 576
+    restrictCamera: false
+    restrictMaxX: 1280
+    restrictMinX: 1280
+    restrictMaxY: 720
+    restrictMinY: 720
+    isUi: false
+    name: level01
+    backgroundColor: '#C6DDF7'
+    follow: -1
+    backgrounds: []
+    copies: []
+    tiles: []
+    extends: {}
+    lastmod: 1706935221560
+    events:
+      - eventKey: OnRoomStart
+        code: inGameRoomStart(this);
+        arguments: {}
+        lib: core
+    uid: zGWBmgK1bbgBRw
+  - type: room
+    oncreate: ''
+    onstep: ''
+    ondraw: ''
+    onleave: ''
+    gridX: 64
+    gridY: 64
+    diagonalGrid: false
+    simulate: true
+    width: 1024
+    height: 576
+    restrictCamera: false
+    restrictMaxX: 1280
+    restrictMinX: 1280
+    restrictMaxY: 720
+    restrictMinY: 720
+    isUi: false
+    name: ending
+    backgroundColor: '#627D71'
+    follow: -1
+    backgrounds: []
+    copies:
+      - x: 1152
+        'y': 640
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: LhNf3TC4gNPQjn
+        exts: {}
+        customProperties: {}
+    tiles: []
+    extends: {}
+    lastmod: 1706935212133
+    events:
+      - eventKey: OnRoomStart
+        code: |-
+          // when room starts, begin bringing up cutscenes
+          this.timer1 = 1;
+
+          // show one picture on top left corner
+          //var panel1x = 200;
+          var panel1y = 150;
+
+          // second panel
+          ct.templates.copy('panel1', 500, panel1y)
+
+
+          // third panel
+          ct.templates.copy('panel1', 900, panel1y);
+        arguments: {}
+        lib: core
+      - eventKey: Timer1
+        code: |-
+          var panel1y = 150;
+          //ct.transition.fadeIn();
+          ct.templates.copy('panel1', 100, panel1y);
+        arguments:
+          name: panel1
+          isUi: false
+        lib: core
+    uid: MP7KLFhH724PwQ
+  - type: room
+    oncreate: ''
+    onstep: ''
+    ondraw: ''
+    onleave: ''
+    gridX: 64
+    gridY: 64
+    diagonalGrid: false
+    simulate: true
+    width: 1024
+    height: 576
+    restrictCamera: false
+    restrictMaxX: 1280
+    restrictMinX: 1280
+    restrictMaxY: 720
+    restrictMinY: 720
+    isUi: true
+    name: layerUI
+    backgroundColor: '#000000'
+    follow: -1
+    backgrounds: []
+    copies:
+      - x: 10
+        'y': 10
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: kWfHdqmFFbWf9P
+        exts: {}
+        customProperties: {}
+    tiles: []
+    extends: {}
+    lastmod: 1706935254860
+    events: []
+    uid: 3kN7wdFdNd5LNg
+actions: []
+emitterTandems: []
+scripts:
+  - name: inGameRoomStart
+    code: |-
+      var inGameRoomStart = function (room) {
+          // import news feed GUI into another room
+          ct.rooms.append('layerUI');
+      }
+startroom: 7fPKrBNkQk95RG
+contentTypes: []
+groups:
+  fonts: []
+  textures: []
+  styles: []
+  rooms: []
+  templates: []
+  sounds: []
+  emitterTandems: []
+settings:
+  authoring:
+    author: Bardic Blaze Interactive
+    site: ''
+    title: Dragons and stocks
+    version:
+      - 0
+      - 0
+      - 0
+    versionPostfix: ''
+    appId: ''
+  rendering:
+    usePixiLegacy: true
+    transparent: false
+    maxFPS: 60
+    pixelatedrender: false
+    highDensity: true
+    desktopMode: maximized
+    hideCursor: false
+    mobileScreenOrientation: unspecified
+  export:
+    windows: true
+    linux: true
+    mac: true
+    functionWrap: false
+    codeModifier: none
+  branding:
+    accent: '#D7BCDB'
+    invertPreloaderScheme: true
+    icon: -1
+    splashScreen: zqbR7QpkkF4zQG
+    forceSmoothIcons: false
+    forceSmoothSplashScreen: false
+    hideLoadingLogo: false
+  fps: 30
+palette: []
