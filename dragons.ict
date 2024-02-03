@@ -232,6 +232,66 @@ textures:
       - x: 53.616180419921875
         'y': 156.51851348876954
     closedStrip: true
+  - lastmod: 1706942717229
+    type: texture
+    name: ocean
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 1160
+    imgHeight: 161
+    width: 1160
+    height: 161
+    offx: 0
+    offy: 0
+    origname: ijgDM7wWqBJRdpN.png
+    shape: rect
+    left: 0
+    right: 1160
+    top: 0
+    bottom: 161
+    uid: jgDM7wWqBJRdpN
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: /Users/frog/Desktop/my games/ocean.png
+  - lastmod: 1706943323094
+    type: texture
+    name: sky
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 1024
+    imgHeight: 576
+    width: 1024
+    height: 576
+    offx: 0
+    offy: 0
+    origname: iQtLjNB61tWjMwj.png
+    shape: rect
+    left: 0
+    right: 1024
+    top: 0
+    bottom: 576
+    uid: QtLjNB61tWjMwj
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: /Users/frog/Desktop/my games/sky.png
+    tiled: false
+    ignoreTiledUse: true
 skeletons: []
 templates:
   - type: template
@@ -294,6 +354,70 @@ templates:
     extends: {}
     lastmod: 1706936326844
     uid: qhd7BDQ1KhJ6q3
+  - type: template
+    name: boat
+    depth: 0
+    texture: 6RNnPFtTjcD81R
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events: []
+    extends: {}
+    lastmod: 1706942015736
+    uid: CNq3nTNMfn1HtG
+  - type: template
+    name: helicopter
+    depth: 0
+    texture: 8WBbCNbmdzN8QH
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events: []
+    extends: {}
+    lastmod: 1706942022869
+    uid: 91zz8fhzJ1FQjr
+  - type: template
+    name: island_placeholder
+    depth: 0
+    texture: G5PwPW3J76t9Jp
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events: []
+    extends: {}
+    lastmod: 1706942034453
+    uid: d7hdrmTn7DwQn3
+  - type: template
+    name: ocean
+    depth: 0
+    texture: jgDM7wWqBJRdpN
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events:
+      - eventKey: OnCreate
+        code: this.depth = -2;
+        arguments: {}
+        lib: core
+    extends: {}
+    lastmod: 1706943258691
+    uid: N4DzhtjtR36hB1
+  - type: template
+    name: sky
+    depth: 0
+    texture: QtLjNB61tWjMwj
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events: []
+    extends: {}
+    lastmod: 1706943261073
+    uid: jFdFJCTTDr2FRW
 sounds: []
 styles: []
 fonts: []
@@ -391,11 +515,44 @@ rooms:
     name: level01
     backgroundColor: '#C6DDF7'
     follow: -1
-    backgrounds: []
-    copies: []
+    backgrounds:
+      - depth: 0
+        texture: QtLjNB61tWjMwj
+        shiftX: 0
+        shiftY: 0
+        parallaxX: 1
+        parallaxY: 1
+        movementX: 0
+        movementY: 0
+        scaleX: 1
+        scaleY: 1
+        repeat: repeat
+    copies:
+      - x: -64
+        'y': 384
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: d7hdrmTn7DwQn3
+        exts: {}
+        customProperties: {}
+      - x: -64
+        'y': 448
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: N4DzhtjtR36hB1
+        exts: {}
+        customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1706935221560
+    lastmod: 1706943307359
     events:
       - eventKey: OnRoomStart
         code: inGameRoomStart(this);
