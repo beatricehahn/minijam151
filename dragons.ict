@@ -1,43 +1,6 @@
 ctjsVersion: 3.3.0
 language: typescript
-notes: |-
-  // Create a new timer and remember it in a variable `timer`
-  // Log "Done!" when it gets to 2.5 seconds
-  var timer = ct.timer.add(2500, 'test');
-  timer.then(() => {
-      // Do something useful
-      hero.invincible = false;
-      console.log('Done!');
-  })
-  // The `catch` part is not necessary. Without it, though, you will
-  // see errors in the console when timers got interrupted,
-  // either manually or when you switch rooms
-  .catch(e => {
-      console.log('Timer removed', e);
-      // You can add code here so that important stuff still
-      // gets executed on room switch:
-      hero.invincible = false;
-  });
-
-  // Log how much time left
-  console.log(timer.time);
-
-  // Stop the timer. It won't call the code inside `then(() => {})` clause
-  timer.reject();
-
-  // Trigger the timer manually
-  timer.resolve();
-
-
-
-  //=====
-  if (ct.room.lives <= 0) {
-      this.kill = true;
-      ct.u.wait(1000)
-      .then(() => {
-          ct.rooms.switch('Main');
-      });
-  }
+notes: Sound Effect "Thunder" by UNIVERSFIELD from Pixabay
 libs:
   place:
     gridX: 1024
@@ -1047,6 +1010,8 @@ templates:
           if (ct.random.chance(10)) {
               this.tex = 'thunderburst';
           }
+
+          ct.sound.spawn('thunder');
         arguments: {}
         lib: core
       - eventKey: Timer1
@@ -1257,7 +1222,7 @@ templates:
           template: N2TMR93h5KrWjn
         lib: place
     extends: {}
-    lastmod: 1707087811558
+    lastmod: 1707088822346
     uid: tBGLwDFbf1WG2k
     group: Cj7NqcmNWpLT5L
 sounds:
@@ -1418,7 +1383,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707088351364
+    lastmod: 1707089075476
     events:
       - eventKey: OnRoomStart
         code: >-
