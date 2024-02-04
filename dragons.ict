@@ -959,7 +959,7 @@ templates:
         arguments: {}
         lib: core
     extends: {}
-    lastmod: 1707075797867
+    lastmod: 1707076118980
     uid: m4bRP9mkjbfpMp
 sounds: []
 styles:
@@ -1112,7 +1112,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707074732532
+    lastmod: 1707076229864
     events:
       - eventKey: OnRoomStart
         code: >
@@ -1174,20 +1174,19 @@ rooms:
         lib: core
       - eventKey: OnActionPress
         code: |-
-          // creates whirlpool
-          ct.templates.copy('whirlpool', 800, 650);
+          // creates whirlpool when in-game screen is not paused
+          if (ct.pixiApp.ticker.speed != 0) {
+              ct.templates.copy('whirlpool', 800, 650);
+          }
         arguments:
           action: createWhirlpool
         lib: core
       - eventKey: OnActionPress
-        code: >-
-          // creates lightning
-
-          ct.templates.copy('bolt1', ct.pointer.x, ct.pointer.y);
-
-
-          //ct.templates.copy(ct.random.dice('bolt1', 'bolt2', 'bolt3'),
-          ct.pointer.x, ct.pointer.y);
+        code: |-
+          // creates lightning when in game screen is not paused
+          if (ct.pixiApp.ticker.speed != 0) {
+              ct.templates.copy('bolt1', ct.pointer.x, ct.pointer.y);
+          }
         arguments:
           action: createLightning
         lib: core
