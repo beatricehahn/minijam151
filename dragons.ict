@@ -913,7 +913,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707070209981
+    lastmod: 1707070483202
     events:
       - eventKey: OnRoomStart
         code: >
@@ -967,8 +967,8 @@ rooms:
         code: >-
           this.timer1 = ct.random.range(0.3, .7);
 
-          ct.templates.copy('boat', ct.camera.width + 50,
-          ct.random.range(ct.camera.height - 50, ct.camera.height - 140));
+          ct.templates.copy('boat', ct.camera.right + 50,
+          ct.random.range(ct.camera.bottom - 50, ct.camera.bottom - 140));
         arguments:
           name: boats
           isUi: false
