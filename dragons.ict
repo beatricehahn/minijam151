@@ -759,7 +759,14 @@ templates:
           template: CNq3nTNMfn1HtG
         lib: place
       - eventKey: OnCreate
-        code: this.timer1 = .2;
+        code: |-
+          this.tex = ct.random.dice(
+              'bolt1',
+              'bolt2',
+              'bolt3'
+          );
+
+          this.timer1 = .2;
         arguments: {}
         lib: core
       - eventKey: Timer1
@@ -768,63 +775,10 @@ templates:
           name: despawn
           isUi: false
         lib: core
-    extends: {}
-    lastmod: 1707068428437
+    extends:
+      cgroup: lightning
+    lastmod: 1707070203220
     uid: N2TMR93h5KrWjn
-  - type: template
-    name: bolt2
-    depth: 0
-    texture: g21dHTzzRhHjch
-    playAnimationOnStart: false
-    loopAnimation: true
-    animationFPS: 30
-    visible: true
-    events:
-      - eventKey: OnCreate
-        code: this.timer1 = .2;
-        arguments: {}
-        lib: core
-      - eventKey: Timer1
-        code: this.kill = true;
-        arguments:
-          name: despawn
-          isUi: false
-        lib: core
-      - eventKey: collisionTemplate
-        code: other.kill = true;
-        arguments:
-          template: CNq3nTNMfn1HtG
-        lib: place
-    extends: {}
-    lastmod: 1707068768533
-    uid: 6P4W8DQ5GkMwk5
-  - type: template
-    name: bolt3
-    depth: 0
-    texture: CKHrkm34fM8tmh
-    playAnimationOnStart: false
-    loopAnimation: true
-    animationFPS: 30
-    visible: true
-    events:
-      - eventKey: OnCreate
-        code: this.timer1 = .2;
-        arguments: {}
-        lib: core
-      - eventKey: collisionTemplate
-        code: other.kill = true;
-        arguments:
-          template: CNq3nTNMfn1HtG
-        lib: place
-      - eventKey: Timer1
-        code: this.kill = true;
-        arguments:
-          name: despawn
-          isUi: false
-        lib: core
-    extends: {}
-    lastmod: 1707068528660
-    uid: TjT2GFFC23nmzr
 sounds: []
 styles: []
 fonts: []
@@ -959,7 +913,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707068541589
+    lastmod: 1707070209981
     events:
       - eventKey: OnRoomStart
         code: >
@@ -1030,10 +984,10 @@ rooms:
         code: >-
           // creates lightning
 
-          // ---ct.templates.copy('bolt1', ct.pointer.x, ct.pointer.y);
+          ct.templates.copy('bolt1', ct.pointer.x, ct.pointer.y);
 
 
-          ct.templates.copy(ct.random.dice('bolt1', 'bolt2', 'bolt3'),
+          //ct.templates.copy(ct.random.dice('bolt1', 'bolt2', 'bolt3'),
           ct.pointer.x, ct.pointer.y);
         arguments:
           action: createLightning
