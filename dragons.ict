@@ -261,7 +261,7 @@ textures:
     isBlank: false
     group: !<tag:yaml.org,2002:js/undefined> ''
     source: /Users/frog/Desktop/my games/ocean.png
-  - lastmod: 1706945866880
+  - lastmod: 1707030463801
     type: texture
     name: sky
     untill: 0
@@ -388,6 +388,125 @@ textures:
       - x: -66.5
         'y': -8.5
     closedStrip: true
+  - lastmod: 1707029436634
+    type: texture
+    name: bolt2
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 1024
+    imgHeight: 576
+    width: 1024
+    height: 576
+    offx: 0
+    offy: 0
+    origname: ig21dHTzzRhHjch.png
+    shape: rect
+    left: 0
+    right: 1024
+    top: 0
+    bottom: 576
+    uid: g21dHTzzRhHjch
+    padding: 1
+    isBlank: false
+    group: TGtw1nRGWC6DfN
+    source: 'C:\Users\bardi\Downloads\bolt2.png'
+  - lastmod: 1707030438113
+    type: texture
+    name: bolt1
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 774.1176470588235
+      - 530.7647058823529
+    marginx: 0
+    marginy: 0
+    imgWidth: 1024
+    imgHeight: 576
+    width: 1024
+    height: 576
+    offx: 0
+    offy: 0
+    origname: i322KKGTF6Kczcp.png
+    shape: circle
+    left: 512
+    right: 512
+    top: 576
+    bottom: 0
+    uid: 322KKGTF6Kczcp
+    padding: 1
+    isBlank: false
+    group: TGtw1nRGWC6DfN
+    source: 'C:\Users\bardi\Downloads\bolt1.png'
+    stripPoints: []
+    closedStrip: true
+    r: 10
+  - lastmod: 1707029436638
+    type: texture
+    name: bolt3
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 1024
+    imgHeight: 576
+    width: 1024
+    height: 576
+    offx: 0
+    offy: 0
+    origname: iCKHrkm34fM8tmh.png
+    shape: rect
+    left: 0
+    right: 1024
+    top: 0
+    bottom: 576
+    uid: CKHrkm34fM8tmh
+    padding: 1
+    isBlank: false
+    group: TGtw1nRGWC6DfN
+    source: 'C:\Users\bardi\Downloads\bolt3.png'
+  - lastmod: 1707029436698
+    type: texture
+    name: thunderburst
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 3591
+    imgHeight: 3622
+    width: 3591
+    height: 3622
+    offx: 0
+    offy: 0
+    origname: i7crDQRfcjqwPPr.png
+    shape: rect
+    left: 0
+    right: 3591
+    top: 0
+    bottom: 3622
+    uid: 7crDQRfcjqwPPr
+    padding: 1
+    isBlank: false
+    group: TGtw1nRGWC6DfN
+    source: 'C:\Users\bardi\Downloads\thunderburst.png'
 skeletons: []
 templates:
   - type: template
@@ -462,7 +581,7 @@ templates:
       - eventKey: OnCreate
         code: |-
           this.scale.x = this.scale.y = 0.5;
-          this.speed = ct.random.range(1, 2);
+          this.speed = ct.random.range(2, 3);
           this.direction = 180;
         arguments: {}
         lib: core
@@ -613,8 +732,35 @@ templates:
           isUi: false
         lib: core
     extends: {}
-    lastmod: 1707025934836
+    lastmod: 1707029655937
     uid: 238Fd28zMgHd1R
+  - type: template
+    name: bolt1
+    depth: 0
+    texture: 322KKGTF6Kczcp
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events:
+      - eventKey: collisionTemplate
+        code: other.kill = true;
+        arguments:
+          template: CNq3nTNMfn1HtG
+        lib: place
+      - eventKey: OnCreate
+        code: this.timer1 = .4;
+        arguments: {}
+        lib: core
+      - eventKey: Timer1
+        code: this.kill = true;
+        arguments:
+          name: despawn
+          isUi: false
+        lib: core
+    extends: {}
+    lastmod: 1707030376658
+    uid: N2TMR93h5KrWjn
 sounds: []
 styles: []
 fonts: []
@@ -749,7 +895,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707026051083
+    lastmod: 1707030386217
     events:
       - eventKey: OnRoomStart
         code: >
@@ -801,7 +947,7 @@ rooms:
         lib: core
       - eventKey: Timer1
         code: >-
-          this.timer1 = ct.random.range(0.3, 3);
+          this.timer1 = ct.random.range(0.3, 1);
 
           ct.templates.copy('boat', ct.camera.width + 50,
           ct.random.range(ct.camera.height - 50, ct.camera.height - 140));
@@ -815,6 +961,13 @@ rooms:
           ct.templates.copy('whirlpool', 800, 650);
         arguments:
           action: createWhirlpool
+        lib: core
+      - eventKey: OnActionPress
+        code: |-
+          // creates lightning
+          ct.templates.copy('bolt1', ct.pointer.x, ct.pointer.y);
+        arguments:
+          action: createLightning
         lib: core
     uid: zGWBmgK1bbgBRw
   - type: room
@@ -924,6 +1077,9 @@ actions:
     methods:
       - code: keyboard.KeyW
       - code: keyboard.ArrowUp
+  - name: createLightning
+    methods:
+      - code: pointer.Primary
 emitterTandems: []
 scripts:
   - name: inGameRoomStart
@@ -936,7 +1092,11 @@ startroom: zGWBmgK1bbgBRw
 contentTypes: []
 groups:
   fonts: []
-  textures: []
+  textures:
+    - name: lightning
+      icon: boosty
+      colorClass: warning
+      uid: TGtw1nRGWC6DfN
   styles: []
   rooms: []
   templates:
