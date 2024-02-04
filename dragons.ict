@@ -488,7 +488,7 @@ textures:
     group: TGtw1nRGWC6DfN
     source: 'C:\Users\bardi\Downloads\bolt3.png'
     r: 15
-  - lastmod: 1707029436698
+  - lastmod: 1707071111945
     type: texture
     name: thunderburst
     untill: 0
@@ -496,8 +496,8 @@ textures:
       - 1
       - 1
     axis:
-      - 0
-      - 0
+      - 1740.001223990208
+      - 2170.1427172582617
     marginx: 0
     marginy: 0
     imgWidth: 3591
@@ -507,7 +507,7 @@ textures:
     offx: 0
     offy: 0
     origname: i7crDQRfcjqwPPr.png
-    shape: rect
+    shape: strip
     left: 0
     right: 3591
     top: 0
@@ -517,6 +517,35 @@ textures:
     isBlank: false
     group: TGtw1nRGWC6DfN
     source: 'C:\Users\bardi\Downloads\thunderburst.png'
+    r: 20
+    stripPoints:
+      - x: 7.674418604651163
+        'y': -14.697674418604652
+      - x: 224.64993880048962
+        'y': -12.09620563035461
+      - x: 272.23133414932704
+        'y': -65.81713586291262
+      - x: 318.27784577723384
+        'y': -93.4450428396571
+      - x: 415.95348837209303
+        'y': -60.74418604651163
+      - x: 431.3023255813954
+        'y': -19.30232558139535
+      - x: 421.1150550795595
+        'y': 0.18286413708723614
+      - x: 378.13831089351277
+        'y': -44.32876376988971
+      - x: 330.5569155446759
+        'y': -94.97992656058695
+      - x: 123.34761321909441
+        'y': -4.421787025703619
+      - x: 5.161566707466413
+        'y': 12.461933904528959
+      - x: -311.02447980416144
+        'y': -41.25899632802912
+      - x: -312.5593635250916
+        'y': 3.252631578947735
+    closedStrip: true
 skeletons: []
 templates:
   - type: template
@@ -623,7 +652,7 @@ templates:
           template: 238Fd28zMgHd1R
         lib: place
     extends: {}
-    lastmod: 1707030591615
+    lastmod: 1707070630146
     uid: CNq3nTNMfn1HtG
     group: Cj7NqcmNWpLT5L
   - type: template
@@ -656,7 +685,7 @@ templates:
 
           ct.room.lives --;
           if (ct.room.lives <= 0) {
-              ct.u.wait(1000)
+              ct.u.wait(500)
               .then(() => {
                   ct.rooms.switch('level01');
               });
@@ -665,7 +694,7 @@ templates:
           template: CNq3nTNMfn1HtG
         lib: place
     extends: {}
-    lastmod: 1707022502278
+    lastmod: 1707070884265
     uid: d7hdrmTn7DwQn3
   - type: template
     name: ocean
@@ -767,6 +796,10 @@ templates:
           );
 
           this.timer1 = .2;
+
+          if (ct.random.chance(10)) {
+              this.tex = 'thunderburst';
+          }
         arguments: {}
         lib: core
       - eventKey: Timer1
@@ -913,7 +946,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707070483202
+    lastmod: 1707071171421
     events:
       - eventKey: OnRoomStart
         code: >
