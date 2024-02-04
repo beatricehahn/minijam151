@@ -157,7 +157,7 @@ textures:
     isBlank: false
     group: !<tag:yaml.org,2002:js/undefined> ''
     source: /Users/frog/Downloads/kenney_space-shooter-redux/PNG/Enemies/enemyRed2.png
-  - lastmod: 1706941507739
+  - lastmod: 1707020090125
     type: texture
     name: boat
     untill: 0
@@ -292,7 +292,7 @@ textures:
     source: /Users/frog/Desktop/my games/sky.png
     tiled: false
     ignoreTiledUse: true
-  - lastmod: 1707017865036
+  - lastmod: 1707020012748
     type: texture
     name: whirlpool
     untill: 0
@@ -324,24 +324,28 @@ textures:
     stripPoints:
       - x: 0
         'y': -50
-      - x: 71
-        'y': -37
-      - x: 136
-        'y': -13
-      - x: 111
-        'y': 18
-      - x: 58
-        'y': 30
-      - x: -5
-        'y': 35
-      - x: -78
-        'y': 31
-      - x: -129
-        'y': 9
-      - x: -129
-        'y': -22
-      - x: -70
-        'y': -41
+      - x: 80
+        'y': -46
+      - x: 144
+        'y': -16
+      - x: 139
+        'y': 20
+      - x: 92
+        'y': 37
+      - x: 56
+        'y': 44
+      - x: -11
+        'y': 49
+      - x: -81
+        'y': 42
+      - x: -138
+        'y': 22
+      - x: -156
+        'y': -4
+      - x: -132
+        'y': -34
+      - x: -68
+        'y': -48
     closedStrip: true
 skeletons: []
 templates:
@@ -432,8 +436,17 @@ templates:
           }
         arguments: {}
         lib: core
+      - eventKey: collisionTemplate
+        code: |
+          var timer= ct.timer.add(1500, 'delay');
+          timer.then(() => {
+              this.kill = true;
+          })
+        arguments:
+          template: 238Fd28zMgHd1R
+        lib: place
     extends: {}
-    lastmod: 1706992977244
+    lastmod: 1707020328804
     uid: CNq3nTNMfn1HtG
     group: Cj7NqcmNWpLT5L
   - type: template
@@ -475,7 +488,7 @@ templates:
           template: CNq3nTNMfn1HtG
         lib: place
     extends: {}
-    lastmod: 1706990727709
+    lastmod: 1707020051736
     uid: d7hdrmTn7DwQn3
   - type: template
     name: ocean
@@ -532,7 +545,7 @@ templates:
         arguments: {}
         lib: core
     extends: {}
-    lastmod: 1707018464064
+    lastmod: 1707020037186
     uid: 238Fd28zMgHd1R
 sounds: []
 styles: []
@@ -679,7 +692,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707018355909
+    lastmod: 1707020033767
     events:
       - eventKey: OnRoomStart
         code: >
