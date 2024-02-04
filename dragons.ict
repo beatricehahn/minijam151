@@ -384,7 +384,7 @@ textures:
       - x: -68
         'y': -48
     closedStrip: true
-  - lastmod: 1707021345959
+  - lastmod: 1707087575435
     type: texture
     name: boat
     untill: 0
@@ -717,6 +717,87 @@ textures:
     padding: 1
     isBlank: false
     group: !<tag:yaml.org,2002:js/undefined> ''
+  - lastmod: 1707087562895
+    type: texture
+    name: boat3
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 75
+      - 13
+    marginx: 0
+    marginy: 0
+    imgWidth: 150
+    imgHeight: 27
+    width: 150
+    height: 27
+    offx: 0
+    offy: 0
+    origname: i5p6Fn78tWGGD6c.png
+    shape: strip
+    left: 75
+    right: 75
+    top: 13
+    bottom: 14
+    uid: 5p6Fn78tWGGD6c
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: 'C:\Users\bardi\Downloads\boat3.png'
+    stripPoints:
+      - x: 0.25
+        'y': -9.75
+      - x: 66
+        'y': -8.5
+      - x: 51.75
+        'y': 9.25
+      - x: -52.25
+        'y': 10.25
+      - x: -66.5
+        'y': -8.5
+    closedStrip: false
+  - lastmod: 1707087580077
+    type: texture
+    name: boat2
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 75
+      - 13
+    marginx: 0
+    marginy: 0
+    imgWidth: 150
+    imgHeight: 27
+    width: 150
+    height: 27
+    offx: 0
+    offy: 0
+    origname: iFgQphzPN9hNQ17.png
+    shape: strip
+    left: 75
+    right: 75
+    top: 13
+    bottom: 14
+    uid: FgQphzPN9hNQ17
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: 'C:\Users\bardi\Downloads\boat2.png'
+    stripPoints:
+      - x: 0.25
+        'y': -9.75
+      - x: 66
+        'y': -8.5
+      - x: 51.75
+        'y': 9.25
+      - x: -52.25
+        'y': 10.25
+      - x: -66.5
+        'y': -8.5
 skeletons: []
 templates:
   - type: template
@@ -780,7 +861,7 @@ templates:
     lastmod: 1706936326844
     uid: qhd7BDQ1KhJ6q3
   - type: template
-    name: boat
+    name: boat-01
     depth: 0
     texture: Wdzw9Fcpr3FfBt
     playAnimationOnStart: false
@@ -830,7 +911,7 @@ templates:
           template: N2TMR93h5KrWjn
         lib: place
     extends: {}
-    lastmod: 1707086047068
+    lastmod: 1707087815436
     uid: CNq3nTNMfn1HtG
     group: Cj7NqcmNWpLT5L
   - type: template
@@ -1070,6 +1151,115 @@ templates:
     extends: {}
     lastmod: 1707085386582
     uid: 3gH7HC5Fn5zmrF
+  - type: template
+    name: boat-02
+    depth: 0
+    texture: FgQphzPN9hNQ17
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events:
+      - eventKey: OnCreate
+        code: |-
+          this.scale.x = this.scale.y = 0.7;
+          this.speed = ct.random.range(3, 4);
+          this.direction = 180;
+        arguments: {}
+        lib: core
+      - eventKey: OnStep
+        code: |-
+          this.move();
+
+          if (this.x < 0) {
+              console.log('yay')
+              this.kill = true;
+          }
+        arguments: {}
+        lib: core
+      - eventKey: collisionTemplate
+        code: |
+          var swayTimer = ct.timer.add(1000, 'lose control');
+          var killDelay = ct.timer.add(1500, 'kill delay');
+
+          swayTimer.then(() => {
+              this.speed = 1;
+              this.direction = ct.random.range(180 - 25, 90 + 25);
+          }).catch(() => void 0)
+
+          killDelay.then(() => {
+              this.kill = true;
+              ct.room.score ++;
+          }).catch(() => void 0)
+        arguments:
+          template: 238Fd28zMgHd1R
+        lib: place
+      - eventKey: collisionTemplate
+        code: |-
+          this.kill = true;
+          ct.room.score ++;
+        arguments:
+          template: N2TMR93h5KrWjn
+        lib: place
+    extends:
+      alpha: 1
+    lastmod: 1707087809639
+    uid: 2dDRBMTfzNH6Bc
+    group: Cj7NqcmNWpLT5L
+    blendMode: normal
+  - type: template
+    name: boat-03
+    depth: 0
+    texture: 5p6Fn78tWGGD6c
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events:
+      - eventKey: OnCreate
+        code: |-
+          this.scale.x = this.scale.y = 1;
+          this.speed = ct.random.range(4, 5);
+          this.direction = 180;
+        arguments: {}
+        lib: core
+      - eventKey: OnStep
+        code: |-
+          this.move();
+
+          if (this.x < 0) {
+              console.log('yay')
+              this.kill = true;
+          }
+        arguments: {}
+        lib: core
+      - eventKey: collisionTemplate
+        code: |
+          var swayTimer = ct.timer.add(1000, 'lose control');
+          var killDelay = ct.timer.add(1500, 'kill delay');
+
+          swayTimer.then(() => {
+              this.direction = ct.random.range(180 - 10, 180-20);
+          }).catch(() => void 0)
+
+          killDelay.then(() => {
+              this.kill = true;
+              ct.room.score ++;
+          }).catch(() => void 0)
+        arguments:
+          template: 238Fd28zMgHd1R
+        lib: place
+      - eventKey: collisionTemplate
+        code: |-
+          this.kill = true;
+          ct.room.score ++;
+        arguments:
+          template: N2TMR93h5KrWjn
+        lib: place
+    extends: {}
+    lastmod: 1707087811558
+    uid: tBGLwDFbf1WG2k
+    group: Cj7NqcmNWpLT5L
 sounds: []
 styles:
   - name: red-gradient
@@ -1221,11 +1411,14 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707086875429
+    lastmod: 1707088309098
     events:
       - eventKey: OnRoomStart
         code: >-
           inGameRoomStart(this);
+
+
+          this.whirlpoolDisabled = true;
 
 
           // this.TotalBoatsInLevel = 10;
@@ -1286,6 +1479,9 @@ rooms:
           this.timer2 = 10; // second wave of boats (faster)
 
           this.timer3 = 20; // third wave of boats (fastest)
+
+
+          ct.transition.fadeIn();
         arguments: {}
         lib: core
       - eventKey: OnDraw
@@ -1334,7 +1530,7 @@ rooms:
 
           if (!this.secondWaveStart) {
               this.timer1 = ct.random.range(0.4, 1);
-              ct.templates.copy('boat', ct.camera.right + 50, ct.random.range(ct.camera.bottom - 50, ct.camera.bottom - 140));
+              ct.templates.copy('boat-01', ct.camera.right + 50, ct.random.range(ct.camera.bottom - 50, ct.camera.bottom - 140));
           }
         arguments:
           name: boats
@@ -1343,7 +1539,7 @@ rooms:
       - eventKey: OnActionPress
         code: |-
           // creates whirlpool when in-game screen is not paused
-          if (ct.pixiApp.ticker.speed != 0) {
+          if (ct.pixiApp.ticker.speed != 0 && !this.whirlpoolDisabled) {
               ct.templates.copy('whirlpool', 800, 650);
           }
         arguments:
@@ -1359,9 +1555,27 @@ rooms:
           action: createLightning
         lib: core
       - eventKey: Timer2
-        code: this.secondWaveStart = true;
+        code: |-
+          this.secondWaveStart = true;
+          if (!this.thirdWaveStart) {
+              this.timer2 = ct.random.range(0.1, 0.2);
+              ct.templates.copy('boat-02', ct.camera.right + 50, ct.random.range(ct.camera.bottom - 50, ct.camera.bottom - 140));
+          }
         arguments:
           name: 2ndwave
+          isUi: false
+        lib: core
+      - eventKey: Timer3
+        code: >-
+          this.thirdWaveStart = true;
+
+
+          this.timer3 = ct.random.range(0.2, 0.5);
+
+          ct.templates.copy('boat-03', ct.camera.right + 50,
+          ct.random.range(ct.camera.bottom - 50, ct.camera.bottom - 140));
+        arguments:
+          name: 3rdwave
           isUi: false
         lib: core
     uid: zGWBmgK1bbgBRw
