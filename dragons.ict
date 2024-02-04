@@ -494,7 +494,7 @@ templates:
           template: 238Fd28zMgHd1R
         lib: place
     extends: {}
-    lastmod: 1707020328804
+    lastmod: 1707023483308
     uid: CNq3nTNMfn1HtG
     group: Cj7NqcmNWpLT5L
   - type: template
@@ -536,7 +536,7 @@ templates:
           template: CNq3nTNMfn1HtG
         lib: place
     extends: {}
-    lastmod: 1707020051736
+    lastmod: 1707022502278
     uid: d7hdrmTn7DwQn3
   - type: template
     name: ocean
@@ -564,11 +564,13 @@ templates:
     visible: true
     events:
       - eventKey: OnCreate
-        code: |-
+        code: |+
           this.scale.x = 0.1;
           this.scale.y = 0.1;
 
           this.pulsePhase = 0;
+
+          this.timer1 = 4;
 
           ct.tween.add({
               obj: this.scale,
@@ -582,6 +584,7 @@ templates:
           // .then(() => {
           //     this.kill = true;
           // });
+
         arguments: {}
         lib: core
       - eventKey: OnStep
@@ -592,8 +595,27 @@ templates:
           this.scale.y = .7 + Math.sin(this.pulsePhase) * 0.1;
         arguments: {}
         lib: core
+      - eventKey: Timer1
+        code: |
+
+
+          ct.tween.add({
+              obj: this.scale,
+              fields: {
+                  x: 0,
+                  y: 0
+              },
+              duration: 500,
+              curve: ct.tween.ease
+          }).then(() => {
+              this.kill = true;
+          });
+        arguments:
+          name: end
+          isUi: false
+        lib: core
     extends: {}
-    lastmod: 1707020037186
+    lastmod: 1707022485673
     uid: 238Fd28zMgHd1R
 sounds: []
 styles: []
@@ -740,7 +762,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707021690476
+    lastmod: 1707024502190
     events:
       - eventKey: OnRoomStart
         code: >
