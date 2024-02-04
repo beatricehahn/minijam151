@@ -1,14 +1,43 @@
 ctjsVersion: 3.3.0
 language: typescript
 notes: |-
-  //lightning collides with boat
-  other.kill = true;
+  // Create a new timer and remember it in a variable `timer`
+  // Log "Done!" when it gets to 2.5 seconds
+  var timer = ct.timer.add(2500, 'test');
+  timer.then(() => {
+      // Do something useful
+      hero.invincible = false;
+      console.log('Done!');
+  })
+  // The `catch` part is not necessary. Without it, though, you will
+  // see errors in the console when timers got interrupted,
+  // either manually or when you switch rooms
+  .catch(e => {
+      console.log('Timer removed', e);
+      // You can add code here so that important stuff still
+      // gets executed on room switch:
+      hero.invincible = false;
+  });
 
-  //creation
-  this.timer1 = .2;
+  // Log how much time left
+  console.log(timer.time);
 
-  // timer1 despawn 
-  this.kill = true;
+  // Stop the timer. It won't call the code inside `then(() => {})` clause
+  timer.reject();
+
+  // Trigger the timer manually
+  timer.resolve();
+
+
+
+  //=====
+  if (ct.room.lives <= 0) {
+      this.kill = true;
+      ct.u.wait(1000)
+      .then(() => {
+          ct.rooms.switch('Main');
+      });
+  }
 libs:
   place:
     gridX: 1024
@@ -631,6 +660,63 @@ textures:
     isBlank: false
     group: !<tag:yaml.org,2002:js/undefined> ''
     r: 50
+  - lastmod: 1707077797458
+    type: texture
+    name: lost-header
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 235
+    imgHeight: 73
+    width: 235
+    height: 73
+    offx: 0
+    offy: 0
+    origname: i8FRWTHPR4h4NHn.png
+    shape: rect
+    left: 0
+    right: 235
+    top: 0
+    bottom: 73
+    uid: 8FRWTHPR4h4NHn
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: 'C:\Users\bardi\Downloads\lost-header.png'
+  - lastmod: 1707078237684
+    type: texture
+    name: try-again
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 100
+    imgHeight: 70
+    width: 100
+    height: 70
+    offx: 0
+    offy: 0
+    origname: iK1jBjw772cQ1BL.png
+    shape: rect
+    left: 0
+    right: 100
+    top: 0
+    bottom: 70
+    uid: K1jBjw772cQ1BL
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
 skeletons: []
 templates:
   - type: template
@@ -647,7 +733,7 @@ templates:
         arguments: {}
         lib: core
     extends: {}
-    lastmod: 1706923275375
+    lastmod: 1707078761368
     uid: LhNf3TC4gNPQjn
   - type: template
     name: t old
@@ -728,16 +814,16 @@ templates:
           swayTimer.then(() => {
               this.speed = 0.5;
               this.direction = ct.random.range(180 - 45, 90 + 25);
-          })
+          }).catch(() => void 0)
 
           killDelay.then(() => {
               this.kill = true;
-          })
+          }).catch(() => void 0)
         arguments:
           template: 238Fd28zMgHd1R
         lib: place
     extends: {}
-    lastmod: 1707070630146
+    lastmod: 1707080538643
     uid: CNq3nTNMfn1HtG
     group: Cj7NqcmNWpLT5L
   - type: template
@@ -769,17 +855,11 @@ templates:
           }
 
           ct.room.lives --;
-          if (ct.room.lives <= 0) {
-              ct.u.wait(500)
-              .then(() => {
-                  ct.rooms.switch('level01');
-              });
-          }
         arguments:
           template: CNq3nTNMfn1HtG
         lib: place
     extends: {}
-    lastmod: 1707070884265
+    lastmod: 1707078161491
     uid: d7hdrmTn7DwQn3
   - type: template
     name: ocean
@@ -825,7 +905,7 @@ templates:
               },
               duration: 500,
               curve: ct.tween.ease
-          });
+          }).catch(() => void 0)
         arguments: {}
         lib: core
       - eventKey: OnStep
@@ -838,8 +918,6 @@ templates:
         lib: core
       - eventKey: Timer1
         code: |
-
-
           ct.tween.add({
               obj: this.scale,
               fields: {
@@ -850,13 +928,13 @@ templates:
               curve: ct.tween.ease
           }).then(() => {
               this.kill = true;
-          });
+          }).catch(() => void 0);
         arguments:
           name: despawn
           isUi: false
         lib: core
     extends: {}
-    lastmod: 1707029655937
+    lastmod: 1707080622552
     uid: 238Fd28zMgHd1R
   - type: template
     name: bolt1
@@ -895,7 +973,7 @@ templates:
         lib: core
     extends:
       cgroup: lightning
-    lastmod: 1707073391684
+    lastmod: 1707079660570
     uid: N2TMR93h5KrWjn
   - type: template
     name: play-btn
@@ -911,7 +989,7 @@ templates:
         arguments: {}
         lib: core
     extends: {}
-    lastmod: 1707074501254
+    lastmod: 1707078962241
     uid: jQ336HGdGfH5zD
   - type: template
     name: pause-btn
@@ -938,7 +1016,7 @@ templates:
         arguments: {}
         lib: core
     extends: {}
-    lastmod: 1707074706755
+    lastmod: 1707078168300
     uid: 91DW7djp43CBwz
   - type: template
     name: continue-btn
@@ -961,6 +1039,34 @@ templates:
     extends: {}
     lastmod: 1707076118980
     uid: m4bRP9mkjbfpMp
+  - type: template
+    name: lost-header
+    depth: 0
+    texture: 8FRWTHPR4h4NHn
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events: []
+    extends: {}
+    lastmod: 1707077816977
+    uid: pGzp6dncPMct4k
+  - type: template
+    name: try-again
+    depth: 0
+    texture: K1jBjw772cQ1BL
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events:
+      - eventKey: OnPointerClick
+        code: ct.rooms.switch('level01');
+        arguments: {}
+        lib: core
+    extends: {}
+    lastmod: 1707079106773
+    uid: 3gH7HC5Fn5zmrF
 sounds: []
 styles:
   - name: red-gradient
@@ -1112,10 +1218,10 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707076229864
+    lastmod: 1707080602036
     events:
       - eventKey: OnRoomStart
-        code: >
+        code: >-
           inGameRoomStart(this);
 
 
@@ -1160,6 +1266,21 @@ rooms:
           // updates score and lives
           this.scoreLabel.text = 'Score: ' + this.score;
           this.livesLabel.text = 'Dragon Ore: ' + this.lives;
+
+          // initiate 'you lost' screen if player loses all lives
+          if (this.lives <= 0) {
+              // this.timer1.reject();
+              ct.u.wait(200)
+              .then(() => {
+                  // Add a layer with "Lose" UI
+                  // ct.rooms.append('UI_Lost', {
+                  //     isUi: true
+                  // });
+
+                  //ct.pixiApp.ticker.speed = 0;
+                  ct.rooms.switch('UI_Lost');
+              }).catch(() => void 0);
+          }
         arguments: {}
         lib: core
       - eventKey: Timer1
@@ -1377,9 +1498,58 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707075927144
+    lastmod: 1707078156383
     events: []
     uid: 8P2MN4BWPPjrt9
+  - type: room
+    oncreate: ''
+    onstep: ''
+    ondraw: ''
+    onleave: ''
+    gridX: 64
+    gridY: 64
+    diagonalGrid: false
+    simulate: true
+    width: 1280
+    height: 720
+    restrictCamera: false
+    restrictMaxX: 1280
+    restrictMinX: 1280
+    restrictMaxY: 720
+    restrictMinY: 720
+    isUi: false
+    name: UI_Lost
+    backgroundColor: '#9E2325'
+    follow: -1
+    backgrounds: []
+    copies:
+      - x: 512
+        'y': 192
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: pGzp6dncPMct4k
+        exts: {}
+        customProperties: {}
+      - x: 576
+        'y': 384
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: 3gH7HC5Fn5zmrF
+        exts: {}
+        customProperties: {}
+    tiles: []
+    extends: {}
+    lastmod: 1707080260181
+    events: []
+    uid: 637TTdHRW2qBqc
 actions:
   - name: createWhirlpool
     methods:
