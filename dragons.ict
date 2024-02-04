@@ -157,9 +157,9 @@ textures:
     isBlank: false
     group: !<tag:yaml.org,2002:js/undefined> ''
     source: /Users/frog/Downloads/kenney_space-shooter-redux/PNG/Enemies/enemyRed2.png
-  - lastmod: 1707020090125
+  - lastmod: 1707020532407
     type: texture
-    name: boat
+    name: boat placeholder
     untill: 0
     grid:
       - 1
@@ -347,6 +347,47 @@ textures:
       - x: -68
         'y': -48
     closedStrip: true
+  - lastmod: 1707021345959
+    type: texture
+    name: boat
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 75
+      - 13
+    marginx: 0
+    marginy: 0
+    imgWidth: 150
+    imgHeight: 27
+    width: 150
+    height: 27
+    offx: 0
+    offy: 0
+    origname: iWdzw9Fcpr3FfBt.png
+    shape: strip
+    left: 75
+    right: 75
+    top: 13
+    bottom: 14
+    uid: Wdzw9Fcpr3FfBt
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: 'C:\Users\bardi\Downloads\boat.png'
+    stripPoints:
+      - x: 0.25
+        'y': -9.75
+      - x: 66
+        'y': -8.5
+      - x: 51.75
+        'y': 9.25
+      - x: -52.25
+        'y': 10.25
+      - x: -66.5
+        'y': -8.5
+    closedStrip: true
 skeletons: []
 templates:
   - type: template
@@ -412,7 +453,7 @@ templates:
   - type: template
     name: boat
     depth: 0
-    texture: 6RNnPFtTjcD81R
+    texture: Wdzw9Fcpr3FfBt
     playAnimationOnStart: false
     loopAnimation: true
     animationFPS: 30
@@ -420,7 +461,7 @@ templates:
     events:
       - eventKey: OnCreate
         code: |-
-          this.scale = 0.5;
+          this.scale.x = this.scale.y = 0.5;
           this.speed = ct.random.range(1, 2);
           this.direction = 180;
         arguments: {}
@@ -438,8 +479,15 @@ templates:
         lib: core
       - eventKey: collisionTemplate
         code: |
-          var timer= ct.timer.add(1500, 'delay');
-          timer.then(() => {
+          var swayTimer = ct.timer.add(1000, 'lose control');
+          var killDelay = ct.timer.add(2000, 'kill delay');
+
+          swayTimer.then(() => {
+              this.speed = 0.5;
+              this.direction = ct.random.range(180 - 45, 90 + 25);
+          })
+
+          killDelay.then(() => {
               this.kill = true;
           })
         arguments:
@@ -692,7 +740,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707020033767
+    lastmod: 1707021690476
     events:
       - eventKey: OnRoomStart
         code: >
