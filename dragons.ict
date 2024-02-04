@@ -613,7 +613,7 @@ templates:
           template: 238Fd28zMgHd1R
         lib: place
     extends: {}
-    lastmod: 1707023483308
+    lastmod: 1707030591615
     uid: CNq3nTNMfn1HtG
     group: Cj7NqcmNWpLT5L
   - type: template
@@ -749,7 +749,7 @@ templates:
           template: CNq3nTNMfn1HtG
         lib: place
       - eventKey: OnCreate
-        code: this.timer1 = .4;
+        code: this.timer1 = .2;
         arguments: {}
         lib: core
       - eventKey: Timer1
@@ -759,7 +759,7 @@ templates:
           isUi: false
         lib: core
     extends: {}
-    lastmod: 1707030376658
+    lastmod: 1707031196259
     uid: N2TMR93h5KrWjn
 sounds: []
 styles: []
@@ -895,7 +895,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707030386217
+    lastmod: 1707031067876
     events:
       - eventKey: OnRoomStart
         code: >
@@ -947,7 +947,7 @@ rooms:
         lib: core
       - eventKey: Timer1
         code: >-
-          this.timer1 = ct.random.range(0.3, 1);
+          this.timer1 = ct.random.range(0.3, .7);
 
           ct.templates.copy('boat', ct.camera.width + 50,
           ct.random.range(ct.camera.height - 50, ct.camera.height - 140));
