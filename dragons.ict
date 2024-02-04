@@ -802,14 +802,13 @@ templates:
           if (this.x < 0) {
               console.log('yay')
               this.kill = true;
-              ct.room.score +=100;
           }
         arguments: {}
         lib: core
       - eventKey: collisionTemplate
         code: |
           var swayTimer = ct.timer.add(1000, 'lose control');
-          var killDelay = ct.timer.add(2000, 'kill delay');
+          var killDelay = ct.timer.add(1500, 'kill delay');
 
           swayTimer.then(() => {
               this.speed = 0.5;
@@ -818,12 +817,20 @@ templates:
 
           killDelay.then(() => {
               this.kill = true;
+              ct.room.score ++;
           }).catch(() => void 0)
         arguments:
           template: 238Fd28zMgHd1R
         lib: place
+      - eventKey: collisionTemplate
+        code: |-
+          this.kill = true;
+          ct.room.score ++;
+        arguments:
+          template: N2TMR93h5KrWjn
+        lib: place
     extends: {}
-    lastmod: 1707080538643
+    lastmod: 1707086047068
     uid: CNq3nTNMfn1HtG
     group: Cj7NqcmNWpLT5L
   - type: template
@@ -933,8 +940,9 @@ templates:
           name: despawn
           isUi: false
         lib: core
-    extends: {}
-    lastmod: 1707080622552
+    extends:
+      cgroup: playerAttack
+    lastmod: 1707085701455
     uid: 238Fd28zMgHd1R
   - type: template
     name: bolt1
@@ -945,11 +953,6 @@ templates:
     animationFPS: 30
     visible: true
     events:
-      - eventKey: collisionTemplate
-        code: other.kill = true;
-        arguments:
-          template: CNq3nTNMfn1HtG
-        lib: place
       - eventKey: OnCreate
         code: |-
           this.tex = ct.random.dice(
@@ -972,8 +975,8 @@ templates:
           isUi: false
         lib: core
     extends:
-      cgroup: lightning
-    lastmod: 1707079660570
+      cgroup: playerAttack
+    lastmod: 1707085684108
     uid: N2TMR93h5KrWjn
   - type: template
     name: play-btn
@@ -1065,7 +1068,7 @@ templates:
         arguments: {}
         lib: core
     extends: {}
-    lastmod: 1707079106773
+    lastmod: 1707085386582
     uid: 3gH7HC5Fn5zmrF
 sounds: []
 styles:
@@ -1218,11 +1221,16 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707080602036
+    lastmod: 1707086875429
     events:
       - eventKey: OnRoomStart
         code: >-
           inGameRoomStart(this);
+
+
+          // this.TotalBoatsInLevel = 10;
+
+          // this.spawnedBoats = 0;
 
 
           // drawing and managing score
@@ -1232,13 +1240,13 @@ rooms:
 
           this.scoreLabel = new PIXI.Text('Score: ' + this.score);
 
-          this.addChild(this.scoreLabel);
+          // this.addChild(this.scoreLabel);
 
-          this.scoreLabel.x = 350;
+          // this.scoreLabel.x = 350;
 
-          this.scoreLabel.y = 10;
+          // this.scoreLabel.y = 10;
 
-          this.scoreLabel.depth = 1000;
+          // this.scoreLabel.depth = 1000;
 
 
           // drawing and managing lives
@@ -1256,13 +1264,32 @@ rooms:
           this.livesLabel.depth = 1000;
 
 
+          // draws day counter ('level counter')
+
+          // this.day = 1;
+
+          // this.dayLabel = new PIXI.Text('Day: ' + this.day);
+
+          // this.addChild(this.dayLabel);
+
+          // this.dayLabel.x = 800;
+
+          // this.dayLabel.y = 10;
+
+          // this.dayLabel.depth = 1000;
+
+
           // generate boats over time
 
-          this.timer1 = 0.3;
+          this.timer1 = 1; // first wave of boats
+
+          this.timer2 = 10; // second wave of boats (faster)
+
+          this.timer3 = 20; // third wave of boats (fastest)
         arguments: {}
         lib: core
       - eventKey: OnDraw
-        code: |-
+        code: |+
           // updates score and lives
           this.scoreLabel.text = 'Score: ' + this.score;
           this.livesLabel.text = 'Dragon Ore: ' + this.lives;
@@ -1281,14 +1308,34 @@ rooms:
                   ct.rooms.switch('UI_Lost');
               }).catch(() => void 0);
           }
+
         arguments: {}
         lib: core
       - eventKey: Timer1
         code: >-
-          this.timer1 = ct.random.range(0.3, .7);
+          // while (this.spawnedBoats < this.TotalBoatsInLevel) {
 
-          ct.templates.copy('boat', ct.camera.right + 50,
+          //     ct.templates.copy('boat', ct.camera.right + 50,
           ct.random.range(ct.camera.bottom - 50, ct.camera.bottom - 140));
+
+          //     this.spawnedBoats ++;
+
+          //     // console.log(this.spawnedBoats);
+
+          //     // if (this.spawnedBoats == this.TotalBoatsInLevel) {
+
+          //     //     return;
+
+          //     // }
+
+          //     this.timer1 = ct.random.range(0.4, 1);
+
+          // }
+
+          if (!this.secondWaveStart) {
+              this.timer1 = ct.random.range(0.4, 1);
+              ct.templates.copy('boat', ct.camera.right + 50, ct.random.range(ct.camera.bottom - 50, ct.camera.bottom - 140));
+          }
         arguments:
           name: boats
           isUi: false
@@ -1310,6 +1357,12 @@ rooms:
           }
         arguments:
           action: createLightning
+        lib: core
+      - eventKey: Timer2
+        code: this.secondWaveStart = true;
+        arguments:
+          name: 2ndwave
+          isUi: false
         lib: core
     uid: zGWBmgK1bbgBRw
   - type: room
@@ -1398,17 +1451,6 @@ rooms:
     follow: -1
     backgrounds: []
     copies:
-      - x: 10
-        'y': 10
-        opacity: 1
-        tint: 16777215
-        scale:
-          x: 1
-          'y': 1
-        rotation: 0
-        uid: kWfHdqmFFbWf9P
-        exts: {}
-        customProperties: {}
       - x: 72
         'y': 668.5
         opacity: 1
@@ -1422,7 +1464,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707075938956
+    lastmod: 1707086014120
     events: []
     uid: 3kN7wdFdNd5LNg
   - type: room
@@ -1565,6 +1607,19 @@ scripts:
       var inGameRoomStart = function (room) {
           // import news feed GUI into another room
           ct.rooms.append('UI_InGame');
+      }
+  - name: LevelManager
+    code: |-
+      var LevelManager = function (currentLevel) {
+          const BaselineEnemiesPerLevel = 10;
+
+          if (currentLevel == 1) {
+              return BaselineEnemiesPerLevel;
+          } else if (currentLevel == 2) {
+              return BaselineEnemiesPerLevel * 2;
+          } else if (currentLevel == 3) {
+              return BaselineEnemiesPerLevel * 3;
+          }
       }
 startroom: zGWBmgK1bbgBRw
 contentTypes: []
