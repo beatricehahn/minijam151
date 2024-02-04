@@ -1,6 +1,14 @@
 ctjsVersion: 3.3.0
 language: typescript
-notes: /* empty */
+notes: |-
+  //lightning collides with boat
+  other.kill = true;
+
+  //creation
+  this.timer1 = .2;
+
+  // timer1 despawn 
+  this.kill = true;
 libs:
   place:
     gridX: 1024
@@ -388,7 +396,7 @@ textures:
       - x: -66.5
         'y': -8.5
     closedStrip: true
-  - lastmod: 1707029436634
+  - lastmod: 1707068761949
     type: texture
     name: bolt2
     untill: 0
@@ -396,18 +404,18 @@ textures:
       - 1
       - 1
     axis:
-      - 0
-      - 0
+      - 1452.3758527240448
+      - 2082.354359405663
     marginx: 0
     marginy: 0
-    imgWidth: 1024
-    imgHeight: 576
-    width: 1024
-    height: 576
+    imgWidth: 3222
+    imgHeight: 3527
+    width: 3222
+    height: 3527
     offx: 0
     offy: 0
     origname: ig21dHTzzRhHjch.png
-    shape: rect
+    shape: circle
     left: 0
     right: 1024
     top: 0
@@ -417,6 +425,7 @@ textures:
     isBlank: false
     group: TGtw1nRGWC6DfN
     source: 'C:\Users\bardi\Downloads\bolt2.png'
+    r: 30
   - lastmod: 1707030438113
     type: texture
     name: bolt1
@@ -449,7 +458,7 @@ textures:
     stripPoints: []
     closedStrip: true
     r: 10
-  - lastmod: 1707029436638
+  - lastmod: 1707068791882
     type: texture
     name: bolt3
     untill: 0
@@ -457,8 +466,8 @@ textures:
       - 1
       - 1
     axis:
-      - 0
-      - 0
+      - 830
+      - 466
     marginx: 0
     marginy: 0
     imgWidth: 1024
@@ -468,7 +477,7 @@ textures:
     offx: 0
     offy: 0
     origname: iCKHrkm34fM8tmh.png
-    shape: rect
+    shape: circle
     left: 0
     right: 1024
     top: 0
@@ -478,6 +487,7 @@ textures:
     isBlank: false
     group: TGtw1nRGWC6DfN
     source: 'C:\Users\bardi\Downloads\bolt3.png'
+    r: 15
   - lastmod: 1707029436698
     type: texture
     name: thunderburst
@@ -759,8 +769,62 @@ templates:
           isUi: false
         lib: core
     extends: {}
-    lastmod: 1707031196259
+    lastmod: 1707068428437
     uid: N2TMR93h5KrWjn
+  - type: template
+    name: bolt2
+    depth: 0
+    texture: g21dHTzzRhHjch
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events:
+      - eventKey: OnCreate
+        code: this.timer1 = .2;
+        arguments: {}
+        lib: core
+      - eventKey: Timer1
+        code: this.kill = true;
+        arguments:
+          name: despawn
+          isUi: false
+        lib: core
+      - eventKey: collisionTemplate
+        code: other.kill = true;
+        arguments:
+          template: CNq3nTNMfn1HtG
+        lib: place
+    extends: {}
+    lastmod: 1707068768533
+    uid: 6P4W8DQ5GkMwk5
+  - type: template
+    name: bolt3
+    depth: 0
+    texture: CKHrkm34fM8tmh
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events:
+      - eventKey: OnCreate
+        code: this.timer1 = .2;
+        arguments: {}
+        lib: core
+      - eventKey: collisionTemplate
+        code: other.kill = true;
+        arguments:
+          template: CNq3nTNMfn1HtG
+        lib: place
+      - eventKey: Timer1
+        code: this.kill = true;
+        arguments:
+          name: despawn
+          isUi: false
+        lib: core
+    extends: {}
+    lastmod: 1707068528660
+    uid: TjT2GFFC23nmzr
 sounds: []
 styles: []
 fonts: []
@@ -895,7 +959,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707031067876
+    lastmod: 1707068541589
     events:
       - eventKey: OnRoomStart
         code: >
@@ -963,9 +1027,14 @@ rooms:
           action: createWhirlpool
         lib: core
       - eventKey: OnActionPress
-        code: |-
+        code: >-
           // creates lightning
-          ct.templates.copy('bolt1', ct.pointer.x, ct.pointer.y);
+
+          // ---ct.templates.copy('bolt1', ct.pointer.x, ct.pointer.y);
+
+
+          ct.templates.copy(ct.random.dice('bolt1', 'bolt2', 'bolt3'),
+          ct.pointer.x, ct.pointer.y);
         arguments:
           action: createLightning
         lib: core
