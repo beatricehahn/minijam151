@@ -1203,7 +1203,7 @@ templates:
         lib: place
     extends:
       alpha: 1
-    lastmod: 1707087809639
+    lastmod: 1707088387140
     uid: 2dDRBMTfzNH6Bc
     group: Cj7NqcmNWpLT5L
     blendMode: normal
@@ -1260,7 +1260,14 @@ templates:
     lastmod: 1707087811558
     uid: tBGLwDFbf1WG2k
     group: Cj7NqcmNWpLT5L
-sounds: []
+sounds:
+  - name: thunder
+    uid: r62k62pHG65Ctm
+    isMusic: false
+    type: sound
+    lastmod: 1707088766334
+    poolSize: 5
+    origname: sr62k62pHG65Ctm.mp3
 styles:
   - name: red-gradient
     uid: n5G2LhFBGDNbkD
@@ -1411,7 +1418,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707088309098
+    lastmod: 1707088351364
     events:
       - eventKey: OnRoomStart
         code: >-
