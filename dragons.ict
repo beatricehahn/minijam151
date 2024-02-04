@@ -546,6 +546,91 @@ textures:
       - x: -312.5593635250916
         'y': 3.252631578947735
     closedStrip: true
+  - lastmod: 1707074430298
+    type: texture
+    name: play-btn
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 100
+      - 50
+    marginx: 0
+    marginy: 0
+    imgWidth: 200
+    imgHeight: 100
+    width: 200
+    height: 100
+    offx: 0
+    offy: 0
+    origname: it15hMj3FnFFTqh.png
+    shape: rect
+    left: 100
+    right: 100
+    top: 50
+    bottom: 50
+    uid: t15hMj3FnFFTqh
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+  - lastmod: 1707074513600
+    type: texture
+    name: pause-btn
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 50
+      - 35
+    marginx: 0
+    marginy: 0
+    imgWidth: 100
+    imgHeight: 70
+    width: 100
+    height: 70
+    offx: 0
+    offy: 0
+    origname: inMDWcQKb3DnM8b.png
+    shape: rect
+    left: 50
+    right: 50
+    top: 35
+    bottom: 35
+    uid: nMDWcQKb3DnM8b
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+  - lastmod: 1707075820441
+    type: texture
+    name: continue-btn
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 50
+      - 50
+    marginx: 0
+    marginy: 0
+    imgWidth: 100
+    imgHeight: 100
+    width: 100
+    height: 100
+    offx: 0
+    offy: 0
+    origname: iFQcQtFQzLgzNKQ.png
+    shape: circle
+    left: 50
+    right: 50
+    top: 50
+    bottom: 50
+    uid: FQcQtFQzLgzNKQ
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    r: 50
 skeletons: []
 templates:
   - type: template
@@ -810,10 +895,91 @@ templates:
         lib: core
     extends:
       cgroup: lightning
-    lastmod: 1707070203220
+    lastmod: 1707073391684
     uid: N2TMR93h5KrWjn
+  - type: template
+    name: play-btn
+    depth: 0
+    texture: t15hMj3FnFFTqh
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events:
+      - eventKey: OnPointerClick
+        code: ct.rooms.switch('beginning');
+        arguments: {}
+        lib: core
+    extends: {}
+    lastmod: 1707074501254
+    uid: jQ336HGdGfH5zD
+  - type: template
+    name: pause-btn
+    depth: 0
+    texture: nMDWcQKb3DnM8b
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events:
+      - eventKey: OnPointerClick
+        code: |-
+          // code from the jetty cat ct.js tutorial
+
+          if (ct.rooms.list['UI_Paused'].length === 0) {
+              // Create a room UI_Paused, put it above the current one (append it),
+              // and specify that it is a UI layer (isUi: true)
+              ct.rooms.append('UI_Paused', {
+                  isUI: true
+              });
+              // Turns ct.delta into 0, effectively stopping the game
+              ct.pixiApp.ticker.speed = 0;
+          }
+        arguments: {}
+        lib: core
+    extends: {}
+    lastmod: 1707074706755
+    uid: 91DW7djp43CBwz
+  - type: template
+    name: continue-btn
+    depth: 0
+    texture: FQcQtFQzLgzNKQ
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events:
+      - eventKey: OnPointerClick
+        code: |-
+          // ct.rooms.remove removes the previously added room
+          // this.getRoom looks up a room that owns the current copy
+          ct.rooms.remove(this.getRoom());
+          // reverts ct.delta back to normal
+          ct.pixiApp.ticker.speed = 1
+        arguments: {}
+        lib: core
+    extends: {}
+    lastmod: 1707075797867
+    uid: m4bRP9mkjbfpMp
 sounds: []
-styles: []
+styles:
+  - name: red-gradient
+    uid: n5G2LhFBGDNbkD
+    origname: sGDNbkD
+    font:
+      family: sans-serif
+      size: 80
+      weight: '900'
+      italic: false
+      halign: center
+    fill:
+      type: '1'
+      color1: '#FF8282'
+      color2: '#FF6390'
+    stroke:
+      color: '#000000'
+      weight: 5
+    lastmod: 1707072856950
 fonts: []
 rooms:
   - type: room
@@ -833,7 +999,7 @@ rooms:
     restrictMaxY: 720
     restrictMinY: 720
     isUi: false
-    name: prologue cutscene
+    name: beginning
     backgroundColor: '#FFC9C9'
     follow: -1
     backgrounds: []
@@ -946,7 +1112,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707071171421
+    lastmod: 1707074732532
     events:
       - eventKey: OnRoomStart
         code: >
@@ -1107,7 +1273,7 @@ rooms:
     restrictMaxY: 720
     restrictMinY: 720
     isUi: true
-    name: layerUI
+    name: UI_InGame
     backgroundColor: '#000000'
     follow: -1
     backgrounds: []
@@ -1123,11 +1289,98 @@ rooms:
         uid: kWfHdqmFFbWf9P
         exts: {}
         customProperties: {}
+      - x: 72
+        'y': 668.5
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: 91DW7djp43CBwz
+        exts: {}
+        customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1706944134310
+    lastmod: 1707075938956
     events: []
     uid: 3kN7wdFdNd5LNg
+  - type: room
+    oncreate: ''
+    onstep: ''
+    ondraw: ''
+    onleave: ''
+    gridX: 64
+    gridY: 64
+    diagonalGrid: false
+    simulate: true
+    width: 1280
+    height: 720
+    restrictCamera: false
+    restrictMaxX: 1280
+    restrictMinX: 1280
+    restrictMaxY: 720
+    restrictMinY: 720
+    isUi: false
+    name: MainMenu
+    backgroundColor: '#FAFAFA'
+    follow: -1
+    backgrounds: []
+    copies:
+      - x: 571
+        'y': 407
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: jQ336HGdGfH5zD
+        exts: {}
+        customProperties: {}
+    tiles: []
+    extends: {}
+    lastmod: 1707074709755
+    events: []
+    uid: CmDWKwPzNf4P9Q
+  - type: room
+    oncreate: ''
+    onstep: ''
+    ondraw: ''
+    onleave: ''
+    gridX: 64
+    gridY: 64
+    diagonalGrid: false
+    simulate: true
+    width: 1280
+    height: 720
+    restrictCamera: false
+    restrictMaxX: 1280
+    restrictMinX: 1280
+    restrictMaxY: 720
+    restrictMinY: 720
+    isUi: true
+    name: UI_Paused
+    backgroundColor: '#485E1C'
+    follow: -1
+    backgrounds: []
+    copies:
+      - x: 614
+        'y': 367.5
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: m4bRP9mkjbfpMp
+        exts: {}
+        customProperties: {}
+    tiles: []
+    extends: {}
+    lastmod: 1707075927144
+    events: []
+    uid: 8P2MN4BWPPjrt9
 actions:
   - name: createWhirlpool
     methods:
@@ -1142,7 +1395,7 @@ scripts:
     code: |-
       var inGameRoomStart = function (room) {
           // import news feed GUI into another room
-          ct.rooms.append('layerUI');
+          ct.rooms.append('UI_InGame');
       }
 startroom: zGWBmgK1bbgBRw
 contentTypes: []
