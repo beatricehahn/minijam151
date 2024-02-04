@@ -1011,7 +1011,9 @@ templates:
               this.tex = 'thunderburst';
           }
 
-          ct.sound.spawn('thunder');
+          ct.sound.spawn('thunder', {
+              volume: 0.25
+          });
         arguments: {}
         lib: core
       - eventKey: Timer1
@@ -1022,7 +1024,7 @@ templates:
         lib: core
     extends:
       cgroup: playerAttack
-    lastmod: 1707085684108
+    lastmod: 1707089717716
     uid: N2TMR93h5KrWjn
   - type: template
     name: play-btn
@@ -1233,6 +1235,13 @@ sounds:
     lastmod: 1707088766334
     poolSize: 5
     origname: sr62k62pHG65Ctm.mp3
+  - name: war_drums
+    uid: q2WHHKP1pt5Nn1
+    isMusic: true
+    type: sound
+    lastmod: 1707089633725
+    poolSize: 5
+    origname: sq2WHHKP1pt5Nn1.mp3
 styles:
   - name: red-gradient
     uid: n5G2LhFBGDNbkD
@@ -1383,10 +1392,16 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707089075476
+    lastmod: 1707089940445
     events:
       - eventKey: OnRoomStart
         code: >-
+          ct.sound.spawn('war_drums', {
+              loop: true,
+              volume: 0.50
+          });
+
+
           inGameRoomStart(this);
 
 
@@ -1530,8 +1545,8 @@ rooms:
         code: |-
           this.secondWaveStart = true;
           if (!this.thirdWaveStart) {
-              this.timer2 = ct.random.range(0.1, 0.2);
-              ct.templates.copy('boat-02', ct.camera.right + 50, ct.random.range(ct.camera.bottom - 50, ct.camera.bottom - 140));
+              this.timer2 = ct.random.range(0.2, 0.4);
+              ct.templates.copy('boat-02', ct.camera.right + 50, ct.random.range(ct.camera.bottom - 60, ct.camera.bottom - 150));
           }
         arguments:
           name: 2ndwave
@@ -1807,7 +1822,7 @@ scripts:
               return BaselineEnemiesPerLevel * 3;
           }
       }
-startroom: zGWBmgK1bbgBRw
+startroom: CmDWKwPzNf4P9Q
 contentTypes: []
 groups:
   fonts: []
