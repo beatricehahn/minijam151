@@ -564,12 +564,14 @@ templates:
     visible: true
     events:
       - eventKey: OnCreate
-        code: |+
+        code: |-
           this.scale.x = 0.1;
           this.scale.y = 0.1;
+          this.depth = -1;
 
           this.pulsePhase = 0;
 
+          // despawn delay timer
           this.timer1 = 4;
 
           ct.tween.add({
@@ -580,11 +582,7 @@ templates:
               },
               duration: 500,
               curve: ct.tween.ease
-          })
-          // .then(() => {
-          //     this.kill = true;
-          // });
-
+          });
         arguments: {}
         lib: core
       - eventKey: OnStep
@@ -611,11 +609,11 @@ templates:
               this.kill = true;
           });
         arguments:
-          name: end
+          name: despawn
           isUi: false
         lib: core
     extends: {}
-    lastmod: 1707022485673
+    lastmod: 1707025934836
     uid: 238Fd28zMgHd1R
 sounds: []
 styles: []
@@ -749,20 +747,9 @@ rooms:
         uid: d7hdrmTn7DwQn3
         exts: {}
         customProperties: {}
-      - x: 832
-        'y': 640
-        opacity: 1
-        tint: 16777215
-        scale:
-          x: 1
-          'y': 1
-        rotation: 0
-        uid: 238Fd28zMgHd1R
-        exts: {}
-        customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707024502190
+    lastmod: 1707026051083
     events:
       - eventKey: OnRoomStart
         code: >
@@ -821,6 +808,13 @@ rooms:
         arguments:
           name: boats
           isUi: false
+        lib: core
+      - eventKey: OnActionPress
+        code: |-
+          // creates whirlpool
+          ct.templates.copy('whirlpool', 800, 650);
+        arguments:
+          action: createWhirlpool
         lib: core
     uid: zGWBmgK1bbgBRw
   - type: room
@@ -925,7 +919,11 @@ rooms:
     lastmod: 1706944134310
     events: []
     uid: 3kN7wdFdNd5LNg
-actions: []
+actions:
+  - name: createWhirlpool
+    methods:
+      - code: keyboard.KeyW
+      - code: keyboard.ArrowUp
 emitterTandems: []
 scripts:
   - name: inGameRoomStart
