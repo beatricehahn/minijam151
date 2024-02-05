@@ -261,7 +261,7 @@ textures:
     isBlank: false
     group: !<tag:yaml.org,2002:js/undefined> ''
     source: /Users/frog/Desktop/my games/ocean.png
-  - lastmod: 1707030463801
+  - lastmod: 1707095786154
     type: texture
     name: sky
     untill: 0
@@ -761,6 +761,109 @@ textures:
         'y': 10.25
       - x: -66.5
         'y': -8.5
+  - lastmod: 1707095927542
+    type: texture
+    name: oceanbg
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 640
+      - 360
+    marginx: 0
+    marginy: 0
+    imgWidth: 1280
+    imgHeight: 720
+    width: 1280
+    height: 720
+    offx: 0
+    offy: 0
+    origname: ifk6wKCkr2LkG4W.png
+    shape: rect
+    left: 640
+    right: 640
+    top: 360
+    bottom: 360
+    uid: fk6wKCkr2LkG4W
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: /Users/frog/Desktop/my games/oceanbg.png
+    tiled: true
+  - lastmod: 1707096548452
+    type: texture
+    name: island_real
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 159
+      - 296
+    marginx: 0
+    marginy: 0
+    imgWidth: 328
+    imgHeight: 517
+    width: 328
+    height: 517
+    offx: 0
+    offy: 0
+    origname: icW3H54R6Kgjc8c.png
+    shape: strip
+    left: 0
+    right: 328
+    top: 0
+    bottom: 517
+    uid: cW3H54R6Kgjc8c
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: /Users/frog/Desktop/my games/island_real.png
+    stripPoints:
+      - x: -8
+        'y': -157
+      - x: 21.01470947265625
+        'y': -151.98316955566406
+      - x: 49.01470947265625
+        'y': -117.98316955566406
+      - x: 92.01470947265625
+        'y': -80.98316955566406
+      - x: 90.01470947265625
+        'y': -44.98316955566406
+      - x: 64.01470947265625
+        'y': -18.983169555664062
+      - x: 81.01470947265625
+        'y': 10.016830444335938
+      - x: 115.01470947265625
+        'y': 16.016830444335938
+      - x: 125
+        'y': 38
+      - x: 94.01470947265625
+        'y': 75.01683044433594
+      - x: 24.01470947265625
+        'y': 104.01683044433594
+      - x: 46.01470947265625
+        'y': 138.01683044433594
+      - x: 91.01470947265625
+        'y': 141.01683044433594
+      - x: 139.01470947265625
+        'y': 152.01683044433594
+      - x: 165.01470947265625
+        'y': 187.01683044433594
+      - x: 133
+        'y': 220
+      - x: -160
+        'y': 220
+      - x: -156
+        'y': -80
+      - x: -157.98529052734375
+        'y': -283.98316955566406
+      - x: -88.98529052734375
+        'y': -209.98316955566406
+      - x: -42.98529052734375
+        'y': -208.98316955566406
+    closedStrip: true
 skeletons: []
 templates:
   - type: template
@@ -873,8 +976,9 @@ templates:
         arguments:
           template: N2TMR93h5KrWjn
         lib: place
-    extends: {}
-    lastmod: 1707087815436
+    extends:
+      cgroup: enemy
+    lastmod: 1707096645203
     uid: CNq3nTNMfn1HtG
     group: Cj7NqcmNWpLT5L
   - type: template
@@ -891,15 +995,15 @@ templates:
     uid: 91zz8fhzJ1FQjr
     group: Cj7NqcmNWpLT5L
   - type: template
-    name: island_placeholder
+    name: island
     depth: 0
-    texture: G5PwPW3J76t9Jp
+    texture: cW3H54R6Kgjc8c
     playAnimationOnStart: false
     loopAnimation: true
     animationFPS: 30
     visible: true
     events:
-      - eventKey: collisionTemplate
+      - eventKey: collisionCGroup
         code: |-
           if (ct.templates.isCopy(other)) {
               other.kill = true;
@@ -907,10 +1011,10 @@ templates:
 
           ct.room.lives --;
         arguments:
-          template: CNq3nTNMfn1HtG
+          group: enemy
         lib: place
     extends: {}
-    lastmod: 1707078161491
+    lastmod: 1707096562471
     uid: d7hdrmTn7DwQn3
   - type: template
     name: ocean
@@ -1179,7 +1283,8 @@ templates:
         lib: place
     extends:
       alpha: 1
-    lastmod: 1707088387140
+      cgroup: enemy
+    lastmod: 1707096648571
     uid: 2dDRBMTfzNH6Bc
     group: Cj7NqcmNWpLT5L
     blendMode: normal
@@ -1232,8 +1337,9 @@ templates:
         arguments:
           template: N2TMR93h5KrWjn
         lib: place
-    extends: {}
-    lastmod: 1707088822346
+    extends:
+      cgroup: enemy
+    lastmod: 1707096651587
     uid: tBGLwDFbf1WG2k
     group: Cj7NqcmNWpLT5L
 sounds:
@@ -1373,42 +1479,31 @@ rooms:
     follow: -1
     backgrounds:
       - depth: -5
-        texture: QtLjNB61tWjMwj
+        texture: fk6wKCkr2LkG4W
         shiftX: 0
         shiftY: 0
         parallaxX: 1
         parallaxY: 1
         movementX: 0
         movementY: 0
-        scaleX: 1.3
-        scaleY: 1.2
+        scaleX: 1
+        scaleY: 1
         repeat: no-repeat
     copies:
-      - x: -64
-        'y': 576
+      - x: 163.10926462
+        'y': 493.69327809
         opacity: 1
         tint: 16777215
         scale:
-          x: 1.2137931
-          'y': 0.9915753
-        rotation: 0
-        uid: N4DzhtjtR36hB1
-        exts: {}
-        customProperties: {}
-      - x: -190.71428571
-        'y': 516.12962963
-        opacity: 1
-        tint: 16777215
-        scale:
-          x: 1.16071429
-          'y': 1.37654321
+          x: 1
+          'y': 1
         rotation: 0
         uid: d7hdrmTn7DwQn3
         exts: {}
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707091757931
+    lastmod: 1707096630238
     events:
       - eventKey: OnRoomStart
         code: >-
@@ -1842,7 +1937,7 @@ scripts:
               return BaselineEnemiesPerLevel * 3;
           }
       }
-startroom: CmDWKwPzNf4P9Q
+startroom: zGWBmgK1bbgBRw
 contentTypes: []
 groups:
   fonts: []
