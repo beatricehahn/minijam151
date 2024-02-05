@@ -359,7 +359,7 @@ textures:
       - x: -66.5
         'y': -8.5
     closedStrip: true
-  - lastmod: 1707068761949
+  - lastmod: 1707100768429
     type: texture
     name: bolt2
     untill: 0
@@ -388,8 +388,8 @@ textures:
     isBlank: false
     group: TGtw1nRGWC6DfN
     source: 'C:\Users\bardi\Downloads\bolt2.png'
-    r: 30
-  - lastmod: 1707030438113
+    r: 40
+  - lastmod: 1707100758828
     type: texture
     name: bolt1
     untill: 0
@@ -420,8 +420,8 @@ textures:
     source: 'C:\Users\bardi\Downloads\bolt1.png'
     stripPoints: []
     closedStrip: true
-    r: 10
-  - lastmod: 1707068791882
+    r: 40
+  - lastmod: 1707100776496
     type: texture
     name: bolt3
     untill: 0
@@ -450,8 +450,8 @@ textures:
     isBlank: false
     group: TGtw1nRGWC6DfN
     source: 'C:\Users\bardi\Downloads\bolt3.png'
-    r: 15
-  - lastmod: 1707071111945
+    r: 40
+  - lastmod: 1707100784061
     type: texture
     name: thunderburst
     untill: 0
@@ -1514,7 +1514,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707096630238
+    lastmod: 1707100691335
     events:
       - eventKey: OnRoomStart
         code: >-
@@ -1638,7 +1638,7 @@ rooms:
           // }
 
           if (!this.secondWaveStart) {
-              this.timer1 = ct.random.range(0.4, 1);
+              this.timer1 = ct.random.range(0.5, 1);
               ct.templates.copy('boat-01', ct.camera.right + 50, ct.random.range(ct.camera.bottom - 50, ct.camera.bottom - 140));
           }
         arguments:
@@ -1667,7 +1667,7 @@ rooms:
         code: |-
           this.secondWaveStart = true;
           if (!this.thirdWaveStart) {
-              this.timer2 = ct.random.range(0.2, 0.4);
+              this.timer2 = ct.random.range(0.6, 2);
               ct.templates.copy('boat-02', ct.camera.right + 50, ct.random.range(ct.camera.bottom - 60, ct.camera.bottom - 150));
           }
         arguments:
