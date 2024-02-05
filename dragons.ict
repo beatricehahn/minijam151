@@ -864,6 +864,53 @@ textures:
       - x: -42.98529052734375
         'y': -208.98316955566406
     closedStrip: true
+  - lastmod: 1707098292746
+    type: texture
+    name: boat01
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 97
+      - 83
+    marginx: 0
+    marginy: 0
+    imgWidth: 195
+    imgHeight: 167
+    width: 195
+    height: 167
+    offx: 0
+    offy: 0
+    origname: ijqcHdzNH8FcL4g.png
+    shape: strip
+    left: 97
+    right: 98
+    top: 83
+    bottom: 84
+    uid: jqcHdzNH8FcL4g
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: /Users/frog/Desktop/my games/boat01.png
+    stripPoints:
+      - x: 7.083333333333334
+        'y': -26.08333333333333
+      - x: 19.25612894694011
+        'y': 38.25701268513998
+      - x: 95.08333333333333
+        'y': 35.66666666666667
+      - x: 74.5
+        'y': 66.75
+      - x: -74.91666666666667
+        'y': 67.58333333333333
+      - x: -88
+        'y': 35.66666666666667
+      - x: -71.9938710530599
+        'y': 39.50701268513998
+      - x: -58.243871053059905
+        'y': -21.326320648193356
+    closedStrip: true
 skeletons: []
 templates:
   - type: template
@@ -929,7 +976,7 @@ templates:
   - type: template
     name: boat-01
     depth: 0
-    texture: Wdzw9Fcpr3FfBt
+    texture: jqcHdzNH8FcL4g
     playAnimationOnStart: false
     loopAnimation: true
     animationFPS: 30
@@ -978,7 +1025,7 @@ templates:
         lib: place
     extends:
       cgroup: enemy
-    lastmod: 1707096645203
+    lastmod: 1707098223193
     uid: CNq3nTNMfn1HtG
     group: Cj7NqcmNWpLT5L
   - type: template
@@ -1014,7 +1061,7 @@ templates:
           group: enemy
         lib: place
     extends: {}
-    lastmod: 1707096562471
+    lastmod: 1707098215644
     uid: d7hdrmTn7DwQn3
   - type: template
     name: ocean
