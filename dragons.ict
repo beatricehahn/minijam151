@@ -232,35 +232,6 @@ textures:
       - x: 53.616180419921875
         'y': 156.51851348876954
     closedStrip: true
-  - lastmod: 1706942717229
-    type: texture
-    name: ocean
-    untill: 0
-    grid:
-      - 1
-      - 1
-    axis:
-      - 0
-      - 0
-    marginx: 0
-    marginy: 0
-    imgWidth: 1160
-    imgHeight: 161
-    width: 1160
-    height: 161
-    offx: 0
-    offy: 0
-    origname: ijgDM7wWqBJRdpN.png
-    shape: rect
-    left: 0
-    right: 1160
-    top: 0
-    bottom: 161
-    uid: jgDM7wWqBJRdpN
-    padding: 1
-    isBlank: false
-    group: !<tag:yaml.org,2002:js/undefined> ''
-    source: /Users/frog/Desktop/my games/ocean.png
   - lastmod: 1707095786154
     type: texture
     name: sky
@@ -1072,22 +1043,6 @@ templates:
     extends: {}
     lastmod: 1707098215644
     uid: d7hdrmTn7DwQn3
-  - type: template
-    name: ocean
-    depth: 0
-    texture: jgDM7wWqBJRdpN
-    playAnimationOnStart: false
-    loopAnimation: true
-    animationFPS: 30
-    visible: true
-    events:
-      - eventKey: OnCreate
-        code: this.depth = -2;
-        arguments: {}
-        lib: core
-    extends: {}
-    lastmod: 1706990622483
-    uid: N4DzhtjtR36hB1
   - type: template
     name: whirlpool
     depth: 0
