@@ -957,6 +957,11 @@ templates:
               duration: 500,
               curve: ct.tween.ease
           }).catch(() => void 0)
+
+          ct.sound.spawn('ocean_whoosh', {
+              loop: true,
+              volume: 0.25
+          });
         arguments: {}
         lib: core
       - eventKey: OnStep
@@ -983,6 +988,10 @@ templates:
         arguments:
           name: despawn
           isUi: false
+        lib: core
+      - eventKey: OnDestroy
+        code: ct.sound.stop('ocean_whoosh');
+        arguments: {}
         lib: core
     extends:
       cgroup: playerAttack
@@ -1024,7 +1033,7 @@ templates:
         lib: core
     extends:
       cgroup: playerAttack
-    lastmod: 1707089717716
+    lastmod: 1707091461929
     uid: N2TMR93h5KrWjn
   - type: template
     name: play-btn
@@ -1242,6 +1251,13 @@ sounds:
     lastmod: 1707089633725
     poolSize: 5
     origname: sq2WHHKP1pt5Nn1.mp3
+  - name: ocean_whoosh
+    uid: 9jMzC5KHpznLtJ
+    isMusic: true
+    type: sound
+    lastmod: 1707091440100
+    poolSize: 5
+    origname: s9jMzC5KHpznLtJ.ogg
 styles:
   - name: red-gradient
     uid: n5G2LhFBGDNbkD
@@ -1392,7 +1408,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707089940445
+    lastmod: 1707091757931
     events:
       - eventKey: OnRoomStart
         code: >-
@@ -1405,7 +1421,7 @@ rooms:
           inGameRoomStart(this);
 
 
-          this.whirlpoolDisabled = true;
+          this.whirlpoolDisabled = false;
 
 
           // this.TotalBoatsInLevel = 10;
@@ -1564,6 +1580,10 @@ rooms:
         arguments:
           name: 3rdwave
           isUi: false
+        lib: core
+      - eventKey: OnRoomEnd
+        code: ct.sound.stop('war_drums');
+        arguments: {}
         lib: core
     uid: zGWBmgK1bbgBRw
   - type: room
