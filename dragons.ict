@@ -263,7 +263,7 @@ textures:
     source: /Users/frog/Desktop/my games/sky.png
     tiled: false
     ignoreTiledUse: true
-  - lastmod: 1707020012748
+  - lastmod: 1707172858564
     type: texture
     name: whirlpool
     untill: 0
@@ -271,14 +271,14 @@ textures:
       - 1
       - 1
     axis:
-      - 156
-      - 53
+      - 352
+      - 139
     marginx: 0
     marginy: 0
-    imgWidth: 300
-    imgHeight: 100
-    width: 300
-    height: 100
+    imgWidth: 760
+    imgHeight: 286
+    width: 760
+    height: 286
     offx: 0
     offy: 0
     origname: ik5Kd26tDtr4RpP.png
@@ -293,31 +293,36 @@ textures:
     group: !<tag:yaml.org,2002:js/undefined> ''
     r: 50
     stripPoints:
-      - x: 0
-        'y': -50
-      - x: 80
-        'y': -46
-      - x: 144
-        'y': -16
-      - x: 139
-        'y': 20
-      - x: 92
-        'y': 37
-      - x: 56
-        'y': 44
-      - x: -11
-        'y': 49
-      - x: -81
+      - x: 96
+        'y': -93
+      - x: 163
+        'y': -66
+      - x: 267
+        'y': -21
+      - x: 244
         'y': 42
-      - x: -138
-        'y': 22
-      - x: -156
-        'y': -4
-      - x: -132
-        'y': -34
-      - x: -68
-        'y': -48
+      - x: 192
+        'y': 82
+      - x: 106
+        'y': 100
+      - x: 37
+        'y': 106
+      - x: -40
+        'y': 109
+      - x: -152
+        'y': 103
+      - x: -275
+        'y': 41
+      - x: -273
+        'y': -42
+      - x: -205
+        'y': -80
+      - x: -70
+        'y': -102
+      - x: 17
+        'y': -105
     closedStrip: true
+    source: 'C:\Users\bardi\Downloads\whirlpool.png'
   - lastmod: 1707087575435
     type: texture
     name: boat
@@ -651,7 +656,7 @@ textures:
     padding: 1
     isBlank: false
     group: !<tag:yaml.org,2002:js/undefined> ''
-  - lastmod: 1707087562895
+  - lastmod: 1707173380687
     type: texture
     name: boat3
     untill: 0
@@ -659,14 +664,14 @@ textures:
       - 1
       - 1
     axis:
-      - 75
-      - 13
+      - 284.0909090909091
+      - 128.15151515151516
     marginx: 0
     marginy: 0
-    imgWidth: 150
-    imgHeight: 27
-    width: 150
-    height: 27
+    imgWidth: 521
+    imgHeight: 299
+    width: 521
+    height: 299
     offx: 0
     offy: 0
     origname: i5p6Fn78tWGGD6c.png
@@ -679,19 +684,37 @@ textures:
     padding: 1
     isBlank: false
     group: !<tag:yaml.org,2002:js/undefined> ''
-    source: 'C:\Users\bardi\Downloads\boat3.png'
+    source: 'C:\Users\bardi\Downloads\boat03.png'
     stripPoints:
-      - x: 0.25
-        'y': -9.75
-      - x: 66
-        'y': -8.5
-      - x: 51.75
-        'y': 9.25
-      - x: -52.25
-        'y': 10.25
-      - x: -66.5
-        'y': -8.5
-    closedStrip: false
+      - x: 157.8257575757576
+        'y': -64.29545454545455
+      - x: 238.12121212121212
+        'y': -5.46969696969697
+      - x: 167.50757575757575
+        'y': 92.88636363636364
+      - x: -154.0681818181818
+        'y': 106.61363636363637
+      - x: -250.74242424242425
+        'y': 74.53030303030303
+      - x: -283.6363636363636
+        'y': -21.575757575757578
+      - x: -192.5757575757576
+        'y': -22.696969696969703
+      - x: -189.54545454545456
+        'y': -59.66666666666667
+      - x: -76.21212121212123
+        'y': -63.909090909090914
+      - x: -76.81818181818184
+        'y': -95.42424242424242
+      - x: -36.81818181818186
+        'y': -114.21212121212122
+      - x: 91.06060606060605
+        'y': -125.12121212121212
+      - x: 120.15151515151513
+        'y': -91.7878787878788
+      - x: 121.96969696969697
+        'y': -63.303030303030305
+    closedStrip: true
   - lastmod: 1707100507593
     type: texture
     name: boat2
@@ -890,6 +913,206 @@ textures:
         'y': 39.50701268513998
       - x: -58.243871053059905
         'y': -21.326320648193356
+    closedStrip: true
+  - lastmod: 1707172684165
+    type: texture
+    name: flower
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 33
+      - 31
+    marginx: 0
+    marginy: 0
+    imgWidth: 66
+    imgHeight: 63
+    width: 66
+    height: 63
+    offx: 0
+    offy: 0
+    origname: i8GrPRp4Rmg8zLj.png
+    shape: circle
+    left: 33
+    right: 33
+    top: 31
+    bottom: 32
+    uid: 8GrPRp4Rmg8zLj
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: 'C:\Users\bardi\Downloads\flower.png'
+    r: 31
+  - lastmod: 1707173370135
+    type: texture
+    name: cloud01
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 99
+      - 37
+    marginx: 0
+    marginy: 0
+    imgWidth: 198
+    imgHeight: 75
+    width: 198
+    height: 75
+    offx: 0
+    offy: 0
+    origname: ifnDW1Hzc9wWTfP.png
+    shape: circle
+    left: 0
+    right: 198
+    top: 0
+    bottom: 75
+    uid: fnDW1Hzc9wWTfP
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: 'C:\Users\bardi\Downloads\cloud01.png'
+    r: 37
+  - lastmod: 1707173361989
+    type: texture
+    name: cloud02
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 115
+      - 45
+    marginx: 0
+    marginy: 0
+    imgWidth: 231
+    imgHeight: 90
+    width: 231
+    height: 90
+    offx: 0
+    offy: 0
+    origname: i449Gg5fJNqh1wC.png
+    shape: circle
+    left: 115
+    right: 116
+    top: 45
+    bottom: 45
+    uid: 449Gg5fJNqh1wC
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: 'C:\Users\bardi\Downloads\cloud02.png'
+    r: 45
+  - lastmod: 1707173376014
+    type: texture
+    name: cloud03
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 217
+      - 64
+    marginx: 0
+    marginy: 0
+    imgWidth: 434
+    imgHeight: 129
+    width: 434
+    height: 129
+    offx: 0
+    offy: 0
+    origname: i5h2fpR2nKDtFJM.png
+    shape: circle
+    left: 217
+    right: 217
+    top: 64
+    bottom: 65
+    uid: 5h2fpR2nKDtFJM
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: 'C:\Users\bardi\Downloads\cloud03.png'
+    r: 64
+  - lastmod: 1707173455124
+    type: texture
+    name: dragon
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 316
+      - 206
+    marginx: 0
+    marginy: 0
+    imgWidth: 632
+    imgHeight: 412
+    width: 632
+    height: 412
+    offx: 0
+    offy: 0
+    origname: ihp7k3H2tPJhMgf.png
+    shape: strip
+    left: 316
+    right: 316
+    top: 206
+    bottom: 206
+    uid: hp7k3H2tPJhMgf
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: 'C:\Users\bardi\Downloads\dragon.png'
+    r: 206
+    stripPoints:
+      - x: -201
+        'y': -177
+      - x: -109
+        'y': -165
+      - x: -31
+        'y': -70
+      - x: 29
+        'y': -20
+      - x: 94
+        'y': -100
+      - x: 139
+        'y': -99
+      - x: 154
+        'y': -10
+      - x: 253
+        'y': 0
+      - x: 121
+        'y': 18
+      - x: 52
+        'y': 50
+      - x: 14
+        'y': 144
+      - x: -124
+        'y': 107
+      - x: -78
+        'y': 165
+      - x: -113
+        'y': 196
+      - x: -167
+        'y': 95
+      - x: -231
+        'y': 68
+      - x: -273
+        'y': 21
+      - x: -284
+        'y': 86
+      - x: -217
+        'y': 185
+      - x: -285
+        'y': 190
+      - x: -279
+        'y': 134
+      - x: -307
+        'y': 102
+      - x: -312
+        'y': -68
+      - x: -279
+        'y': -140
     closedStrip: true
 skeletons: []
 templates:
@@ -1353,6 +1576,66 @@ templates:
     lastmod: 1707096651587
     uid: tBGLwDFbf1WG2k
     group: Cj7NqcmNWpLT5L
+  - type: template
+    name: cloud01
+    depth: 0
+    texture: fnDW1Hzc9wWTfP
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events: []
+    extends: {}
+    lastmod: 1707173252293
+    uid: h9FMfMz1k5cChJ
+  - type: template
+    name: cloud02
+    depth: 0
+    texture: 449Gg5fJNqh1wC
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events: []
+    extends: {}
+    lastmod: 1707173259674
+    uid: cDNff9MB3ndcQ4
+  - type: template
+    name: cloud03
+    depth: 0
+    texture: 5h2fpR2nKDtFJM
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events: []
+    extends: {}
+    lastmod: 1707173265523
+    uid: 3mHwmP1cw9d9wC
+  - type: template
+    name: flower
+    depth: 0
+    texture: 8GrPRp4Rmg8zLj
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events: []
+    extends: {}
+    lastmod: 1707173274192
+    uid: M5KJr99fNgjKjq
+  - type: template
+    name: dragon
+    depth: 0
+    texture: hp7k3H2tPJhMgf
+    playAnimationOnStart: false
+    loopAnimation: true
+    animationFPS: 30
+    visible: true
+    events: []
+    extends: {}
+    lastmod: 1707173335798
+    uid: kDWbBHCd58L3bk
 sounds:
   - name: thunder
     uid: r62k62pHG65Ctm
@@ -1512,9 +1795,185 @@ rooms:
         uid: d7hdrmTn7DwQn3
         exts: {}
         customProperties: {}
+      - x: 742
+        'y': 94.5
+        opacity: 0.65
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: cDNff9MB3ndcQ4
+        exts: {}
+        customProperties: {}
+      - x: 1061
+        'y': 22.5
+        opacity: 0.6
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: 3mHwmP1cw9d9wC
+        exts: {}
+        customProperties: {}
+      - x: 1036
+        'y': 84.8875969
+        opacity: 0.82
+        tint: 16777215
+        scale:
+          x: 0.70967742
+          'y': 0.7248062
+        rotation: 0
+        uid: 3mHwmP1cw9d9wC
+        exts: {}
+        customProperties: {}
+      - x: 238.12987013
+        'y': 117
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 0.74025974
+          'y': 0.43333333
+        rotation: 0
+        uid: cDNff9MB3ndcQ4
+        exts: {}
+        customProperties: {}
+      - x: 322.5
+        'y': 52.22
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 0.95454545
+          'y': 0.56
+        rotation: 0
+        uid: h9FMfMz1k5cChJ
+        exts: {}
+        customProperties: {}
+      - x: 226.5
+        'y': 35.32666667
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 0.34848485
+          'y': 0.34666667
+        rotation: 0
+        uid: h9FMfMz1k5cChJ
+        exts: {}
+        customProperties: {}
+      - x: 50
+        'y': 39.5
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: h9FMfMz1k5cChJ
+        exts: {}
+        customProperties: {}
+      - x: 0
+        'y': 64
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: 3mHwmP1cw9d9wC
+        exts: {}
+        customProperties: {}
+      - x: 1153.14889579
+        'y': 190.88182223
+        opacity: 0.86
+        tint: 16777215
+        scale:
+          x: 0.27271957
+          'y': 0.28907773
+        rotation: 0
+        uid: 3mHwmP1cw9d9wC
+        exts: {}
+        customProperties: {}
+      - x: 1023.51608341
+        'y': 153.3796293
+        opacity: 0.5
+        tint: 16777215
+        scale:
+          x: 0.48674705
+          'y': 0.37158871
+        rotation: 0
+        uid: h9FMfMz1k5cChJ
+        exts: {}
+        customProperties: {}
+      - x: 1280
+        'y': 128
+        opacity: 0.91
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: h9FMfMz1k5cChJ
+        exts: {}
+        customProperties: {}
+      - x: 0
+        'y': 192
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: h9FMfMz1k5cChJ
+        exts: {}
+        customProperties: {}
+      - x: 448
+        'y': 0
+        opacity: 0.76
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: h9FMfMz1k5cChJ
+        exts: {}
+        customProperties: {}
+      - x: 329.0655560939326
+        'y': 209.57994634219438
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: kDWbBHCd58L3bk
+        exts: {}
+        customProperties: {}
+      - x: 320
+        'y': 128
+        opacity: 0.91
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: h9FMfMz1k5cChJ
+        exts: {}
+        customProperties: {}
+      - x: 439
+        'y': 195
+        opacity: 0.75
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: cDNff9MB3ndcQ4
+        exts: {}
+        customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707106846661
+    lastmod: 1707174253300
     events:
       - eventKey: OnRoomStart
         code: >-
