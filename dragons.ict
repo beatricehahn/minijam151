@@ -764,7 +764,7 @@ textures:
       - x: -107.5
         'y': -80.5
     closedStrip: true
-  - lastmod: 1707095927542
+  - lastmod: 1707193440234
     type: texture
     name: oceanbg
     untill: 0
@@ -1202,6 +1202,209 @@ textures:
     group: !<tag:yaml.org,2002:js/undefined> ''
     source: 'C:\Users\bardi\Downloads\win.png'
     tiled: true
+  - lastmod: 1707195613351
+    type: texture
+    name: panel_01
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 1280
+    imgHeight: 720
+    width: 1280
+    height: 720
+    offx: 0
+    offy: 0
+    origname: iH9N3mddCnj8cJh.png
+    shape: rect
+    left: 0
+    right: 1280
+    top: 0
+    bottom: 720
+    uid: H9N3mddCnj8cJh
+    padding: 1
+    isBlank: false
+    group: M7QJc6tM59fzNt
+    source: 'C:\Users\bardi\Downloads\panel 01.png'
+  - lastmod: 1707195619598
+    type: texture
+    name: panel_02
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 1280
+    imgHeight: 749
+    width: 1280
+    height: 749
+    offx: 0
+    offy: 0
+    origname: idqWNC8F5QG4jFg.png
+    shape: rect
+    left: 0
+    right: 1280
+    top: 0
+    bottom: 749
+    uid: dqWNC8F5QG4jFg
+    padding: 1
+    isBlank: false
+    group: M7QJc6tM59fzNt
+    source: 'C:\Users\bardi\Downloads\panel 02.png'
+  - lastmod: 1707195623881
+    type: texture
+    name: panel_03
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 3591
+    imgHeight: 3569
+    width: 3591
+    height: 3569
+    offx: 0
+    offy: 0
+    origname: iHTGJ84P5F7LDjK.png
+    shape: rect
+    left: 0
+    right: 3591
+    top: 0
+    bottom: 3569
+    uid: HTGJ84P5F7LDjK
+    padding: 1
+    isBlank: false
+    group: M7QJc6tM59fzNt
+    source: 'C:\Users\bardi\Downloads\panel 03.png'
+  - lastmod: 1707195626363
+    type: texture
+    name: panel_04
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 3351
+    imgHeight: 3442
+    width: 3351
+    height: 3442
+    offx: 0
+    offy: 0
+    origname: i6J7RnWq8HtzPbd.png
+    shape: rect
+    left: 0
+    right: 3351
+    top: 0
+    bottom: 3442
+    uid: 6J7RnWq8HtzPbd
+    padding: 1
+    isBlank: false
+    group: M7QJc6tM59fzNt
+    source: 'C:\Users\bardi\Downloads\panel 04.png'
+  - lastmod: 1707195633871
+    type: texture
+    name: panel_5
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 2995
+    imgHeight: 3070
+    width: 2995
+    height: 3070
+    offx: 0
+    offy: 0
+    origname: ijNBqBJ1bgf1Wtt.png
+    shape: rect
+    left: 0
+    right: 2995
+    top: 0
+    bottom: 3070
+    uid: jNBqBJ1bgf1Wtt
+    padding: 1
+    isBlank: false
+    group: M7QJc6tM59fzNt
+    source: 'C:\Users\bardi\Downloads\panel 5.png'
+  - lastmod: 1707195639177
+    type: texture
+    name: continue_story_btn
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 120
+    imgHeight: 48
+    width: 120
+    height: 48
+    offx: 0
+    offy: 0
+    origname: ipC754hjLHqz7gd.png
+    shape: rect
+    left: 0
+    right: 120
+    top: 0
+    bottom: 48
+    uid: pC754hjLHqz7gd
+    padding: 1
+    isBlank: false
+    group: M7QJc6tM59fzNt
+    source: 'C:\Users\bardi\Downloads\continue story btn.png'
+  - lastmod: 1707195642746
+    type: texture
+    name: defend_the_island_btn
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 210
+    imgHeight: 48
+    width: 210
+    height: 48
+    offx: 0
+    offy: 0
+    origname: ipM8cr6T8NfmTTh.png
+    shape: rect
+    left: 0
+    right: 210
+    top: 0
+    bottom: 48
+    uid: pM8cr6T8NfmTTh
+    padding: 1
+    isBlank: false
+    group: M7QJc6tM59fzNt
+    source: 'C:\Users\bardi\Downloads\defend the island btn.png'
 skeletons: []
 templates:
   - type: template
@@ -2591,6 +2794,10 @@ groups:
       icon: boosty
       colorClass: warning
       uid: TGtw1nRGWC6DfN
+    - name: prologue
+      icon: folder
+      colorClass: success
+      uid: M7QJc6tM59fzNt
   styles: []
   rooms: []
   templates:
