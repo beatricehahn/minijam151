@@ -364,7 +364,7 @@ textures:
       - x: -66.5
         'y': -8.5
     closedStrip: true
-  - lastmod: 1707100768429
+  - lastmod: 1707182897828
     type: texture
     name: bolt2
     untill: 0
@@ -372,8 +372,8 @@ textures:
       - 1
       - 1
     axis:
-      - 1452.3758527240448
-      - 2082.354359405663
+      - 1435.7377574859495
+      - 2090.04483559614
     marginx: 0
     marginy: 0
     imgWidth: 3222
@@ -393,8 +393,8 @@ textures:
     isBlank: false
     group: TGtw1nRGWC6DfN
     source: 'C:\Users\bardi\Downloads\bolt2.png'
-    r: 40
-  - lastmod: 1707100758828
+    r: 10
+  - lastmod: 1707182874489
     type: texture
     name: bolt1
     untill: 0
@@ -402,8 +402,8 @@ textures:
       - 1
       - 1
     axis:
-      - 774.1176470588235
-      - 530.7647058823529
+      - 777.1176470588235
+      - 536.7647058823529
     marginx: 0
     marginy: 0
     imgWidth: 1024
@@ -425,8 +425,8 @@ textures:
     source: 'C:\Users\bardi\Downloads\bolt1.png'
     stripPoints: []
     closedStrip: true
-    r: 40
-  - lastmod: 1707100776496
+    r: 10
+  - lastmod: 1707182911493
     type: texture
     name: bolt3
     untill: 0
@@ -434,8 +434,8 @@ textures:
       - 1
       - 1
     axis:
-      - 830
-      - 466
+      - 828.6428571428571
+      - 472.8571428571429
     marginx: 0
     marginy: 0
     imgWidth: 1024
@@ -455,8 +455,8 @@ textures:
     isBlank: false
     group: TGtw1nRGWC6DfN
     source: 'C:\Users\bardi\Downloads\bolt3.png'
-    r: 40
-  - lastmod: 1707100784061
+    r: 10
+  - lastmod: 1707182593441
     type: texture
     name: thunderburst
     untill: 0
@@ -488,7 +488,7 @@ textures:
     r: 20
     stripPoints:
       - x: 7.674418604651163
-        'y': -14.697674418604652
+        'y': -28.90662964248525
       - x: 224.64993880048962
         'y': -12.09620563035461
       - x: 272.23133414932704
@@ -497,22 +497,22 @@ textures:
         'y': -93.4450428396571
       - x: 415.95348837209303
         'y': -60.74418604651163
-      - x: 431.3023255813954
-        'y': -19.30232558139535
-      - x: 421.1150550795595
-        'y': 0.18286413708723614
-      - x: 378.13831089351277
-        'y': -44.32876376988971
+      - x: 437.3918778202014
+        'y': -3.0635196112460967
+      - x: 425.17475657209684
+        'y': 34.690326823654395
+      - x: 398.43681835619935
+        'y': 2.357803394289391
       - x: 330.5569155446759
         'y': -94.97992656058695
       - x: 123.34761321909441
         'y': -4.421787025703619
-      - x: 5.161566707466413
-        'y': 12.461933904528959
+      - x: 15.310820438809696
+        'y': 26.670889128409556
       - x: -311.02447980416144
         'y': -41.25899632802912
-      - x: -312.5593635250916
-        'y': 3.252631578947735
+      - x: -316.61906501762894
+        'y': -0.8070699135895785
     closedStrip: true
   - lastmod: 1707074430298
     type: texture
@@ -628,7 +628,7 @@ textures:
     isBlank: false
     group: !<tag:yaml.org,2002:js/undefined> ''
     source: 'C:\Users\bardi\Downloads\lost-header.png'
-  - lastmod: 1707078237684
+  - lastmod: 1707180143032
     type: texture
     name: try-again
     untill: 0
@@ -636,14 +636,14 @@ textures:
       - 1
       - 1
     axis:
-      - 0
-      - 0
+      - 4
+      - -7
     marginx: 0
     marginy: 0
     imgWidth: 100
     imgHeight: 70
     width: 100
-    height: 70
+    height: 50
     offx: 0
     offy: 0
     origname: iK1jBjw772cQ1BL.png
@@ -715,7 +715,7 @@ textures:
       - x: 121.96969696969697
         'y': -63.303030303030305
     closedStrip: true
-  - lastmod: 1707100507593
+  - lastmod: 1707182732387
     type: texture
     name: boat2
     untill: 0
@@ -1114,6 +1114,94 @@ textures:
       - x: -279
         'y': -140
     closedStrip: true
+  - lastmod: 1707179899506
+    type: texture
+    name: lose
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 1280
+    imgHeight: 720
+    width: 1280
+    height: 720
+    offx: 0
+    offy: 0
+    origname: iDhrF4rMtpk48QM.png
+    shape: rect
+    left: 0
+    right: 1280
+    top: 0
+    bottom: 720
+    uid: DhrF4rMtpk48QM
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: 'C:\Users\bardi\Downloads\lose.png'
+    tiled: true
+  - lastmod: 1707180132030
+    type: texture
+    name: try again
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 100
+    imgHeight: 50
+    width: 100
+    height: 50
+    offx: 0
+    offy: 0
+    origname: iBLCb6LfCrDF3wq.png
+    shape: rect
+    left: 0
+    right: 100
+    top: 0
+    bottom: 50
+    uid: BLCb6LfCrDF3wq
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+  - lastmod: 1707181898416
+    type: texture
+    name: win
+    untill: 0
+    grid:
+      - 1
+      - 1
+    axis:
+      - 0
+      - 0
+    marginx: 0
+    marginy: 0
+    imgWidth: 1280
+    imgHeight: 720
+    width: 1280
+    height: 720
+    offx: 0
+    offy: 0
+    origname: iBm7N6GBKbgpJTc.png
+    shape: rect
+    left: 0
+    right: 1280
+    top: 0
+    bottom: 720
+    uid: Bm7N6GBKbgpJTc
+    padding: 1
+    isBlank: false
+    group: !<tag:yaml.org,2002:js/undefined> ''
+    source: 'C:\Users\bardi\Downloads\win.png'
+    tiled: true
 skeletons: []
 templates:
   - type: template
@@ -1188,8 +1276,10 @@ templates:
       - eventKey: OnCreate
         code: |-
           this.scale.x = this.scale.y = 0.5;
-          this.speed = ct.random.range(2, 3);
+          this.speed = ct.random.range(1, 2);
           this.direction = 180;
+
+          this.hp = 3;
         arguments: {}
         lib: core
       - eventKey: OnStep
@@ -1221,14 +1311,21 @@ templates:
         lib: place
       - eventKey: collisionTemplate
         code: |-
-          this.kill = true;
+          this.hp --;
           ct.room.score ++;
         arguments:
           template: N2TMR93h5KrWjn
         lib: place
+      - eventKey: OnDraw
+        code: |-
+          if (this.hp == 0) {
+              this.kill = true;
+          }
+        arguments: {}
+        lib: core
     extends:
       cgroup: enemy
-    lastmod: 1707098223193
+    lastmod: 1707183365648
     uid: CNq3nTNMfn1HtG
     group: Cj7NqcmNWpLT5L
   - type: template
@@ -1277,8 +1374,8 @@ templates:
     events:
       - eventKey: OnCreate
         code: |-
-          this.scale.x = 0.1;
-          this.scale.y = 0.1;
+          this.scale.x = 1;
+          this.scale.y = 1;
           this.depth = -1;
 
           this.pulsePhase = 0;
@@ -1333,7 +1430,7 @@ templates:
         lib: core
     extends:
       cgroup: playerAttack
-    lastmod: 1707085701455
+    lastmod: 1707183552324
     uid: 238Fd28zMgHd1R
   - type: template
     name: bolt1
@@ -1354,7 +1451,7 @@ templates:
 
           this.timer1 = .2;
 
-          if (ct.random.chance(10)) {
+          if (ct.random.chance(15)) {
               this.tex = 'thunderburst';
           }
 
@@ -1371,7 +1468,7 @@ templates:
         lib: core
     extends:
       cgroup: playerAttack
-    lastmod: 1707091461929
+    lastmod: 1707183175217
     uid: N2TMR93h5KrWjn
   - type: template
     name: play-btn
@@ -1452,7 +1549,7 @@ templates:
   - type: template
     name: try-again
     depth: 0
-    texture: K1jBjw772cQ1BL
+    texture: BLCb6LfCrDF3wq
     playAnimationOnStart: false
     loopAnimation: true
     animationFPS: 30
@@ -1463,7 +1560,7 @@ templates:
         arguments: {}
         lib: core
     extends: {}
-    lastmod: 1707085386582
+    lastmod: 1707180154079
     uid: 3gH7HC5Fn5zmrF
   - type: template
     name: boat-02
@@ -1477,18 +1574,14 @@ templates:
       - eventKey: OnCreate
         code: |-
           this.scale.x = this.scale.y = 0.7;
-          this.speed = ct.random.range(3, 4);
+          this.speed = ct.random.range(0.5, 1);
           this.direction = 180;
+
+          this.hp = 7;
         arguments: {}
         lib: core
       - eventKey: OnStep
-        code: |-
-          this.move();
-
-          if (this.x < 0) {
-              console.log('yay')
-              this.kill = true;
-          }
+        code: this.move();
         arguments: {}
         lib: core
       - eventKey: collisionTemplate
@@ -1510,15 +1603,22 @@ templates:
         lib: place
       - eventKey: collisionTemplate
         code: |-
-          this.kill = true;
           ct.room.score ++;
+          this.hp --;
         arguments:
           template: N2TMR93h5KrWjn
         lib: place
+      - eventKey: OnDraw
+        code: |-
+          if (this.hp == 0) {
+              this.kill = true;
+          }
+        arguments: {}
+        lib: core
     extends:
       alpha: 1
       cgroup: enemy
-    lastmod: 1707096648571
+    lastmod: 1707183079081
     uid: 2dDRBMTfzNH6Bc
     group: Cj7NqcmNWpLT5L
     blendMode: normal
@@ -1533,19 +1633,15 @@ templates:
     events:
       - eventKey: OnCreate
         code: |-
-          this.scale.x = this.scale.y = 1;
-          this.speed = ct.random.range(4, 5);
+          this.scale.x = this.scale.y = 0.8;
+          this.speed = 0.5;
           this.direction = 180;
+
+          this.hp = 15;
         arguments: {}
         lib: core
       - eventKey: OnStep
-        code: |-
-          this.move();
-
-          if (this.x < 0) {
-              console.log('yay')
-              this.kill = true;
-          }
+        code: this.move();
         arguments: {}
         lib: core
       - eventKey: collisionTemplate
@@ -1566,14 +1662,25 @@ templates:
         lib: place
       - eventKey: collisionTemplate
         code: |-
-          this.kill = true;
           ct.room.score ++;
+          this.hp --;
         arguments:
           template: N2TMR93h5KrWjn
         lib: place
+      - eventKey: OnDraw
+        code: |-
+          if (this.hp == 0) {
+              this.kill = true;
+          }
+        arguments: {}
+        lib: core
+      - eventKey: OnDestroy
+        code: ct.room.win = true;
+        arguments: {}
+        lib: core
     extends:
       cgroup: enemy
-    lastmod: 1707096651587
+    lastmod: 1707183784894
     uid: tBGLwDFbf1WG2k
     group: Cj7NqcmNWpLT5L
   - type: template
@@ -1676,6 +1783,17 @@ styles:
       color: '#000000'
       weight: 5
     lastmod: 1707072856950
+  - name: lives
+    uid: KGdN654L1D72kr
+    origname: s1D72kr
+    font:
+      family: sans-serif
+      size: 16
+      weight: '700'
+      italic: false
+    fill:
+      type: '0'
+    lastmod: 1707184586258
 fonts: []
 rooms:
   - type: room
@@ -1971,9 +2089,31 @@ rooms:
         uid: cDNff9MB3ndcQ4
         exts: {}
         customProperties: {}
+      - x: 50
+        'y': 673
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: M5KJr99fNgjKjq
+        exts: {}
+        customProperties: {}
+      - x: 50
+        'y': 673
+        opacity: 1
+        tint: 16777215
+        scale:
+          x: 1
+          'y': 1
+        rotation: 0
+        uid: M5KJr99fNgjKjq
+        exts: {}
+        customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707174253300
+    lastmod: 1707184911385
     events:
       - eventKey: OnRoomStart
         code: >-
@@ -1987,6 +2127,9 @@ rooms:
 
 
           this.whirlpoolDisabled = false;
+
+
+          this.win = false;
 
 
           // this.TotalBoatsInLevel = 10;
@@ -2014,13 +2157,14 @@ rooms:
 
           this.lives = 3;
 
-          this.livesLabel = new PIXI.Text('Dragon Ores: ' + this.lives);
+          this.livesLabel = new PIXI.Text('Flowers Remaining: ' + this.lives,
+          ct.styles.get('lives'));
 
           this.addChild(this.livesLabel);
 
-          this.livesLabel.x = 600;
+          this.livesLabel.x = 100;
 
-          this.livesLabel.y = 10;
+          this.livesLabel.y = 670;
 
           this.livesLabel.depth = 1000;
 
@@ -2044,19 +2188,19 @@ rooms:
 
           this.timer1 = 1; // first wave of boats
 
-          this.timer2 = 10; // second wave of boats (faster)
+          this.timer2 = 30; // second wave of boats (faster)
 
-          this.timer3 = 20; // third wave of boats (fastest)
+          this.timer3 = 60; // third wave of boats (fastest)
 
 
           ct.transition.fadeIn();
         arguments: {}
         lib: core
       - eventKey: OnDraw
-        code: |+
+        code: |-
           // updates score and lives
           this.scoreLabel.text = 'Score: ' + this.score;
-          this.livesLabel.text = 'Dragon Ore: ' + this.lives;
+          this.livesLabel.text = 'Flowers Remaining: ' + this.lives;
 
           // initiate 'you lost' screen if player loses all lives
           if (this.lives <= 0) {
@@ -2069,10 +2213,19 @@ rooms:
                   // });
 
                   //ct.pixiApp.ticker.speed = 0;
+                  ct.sound.stop('war_drums');
                   ct.rooms.switch('UI_Lost');
               }).catch(() => void 0);
           }
 
+          if (this.win == true) {
+                  ct.u.wait(200)
+              .then(() => {
+                  //ct.pixiApp.ticker.speed = 0;
+                  ct.sound.stop('war_drums');
+                  ct.rooms.switch('win');
+              }).catch(() => void 0);
+          }
         arguments: {}
         lib: core
       - eventKey: Timer1
@@ -2097,8 +2250,8 @@ rooms:
           // }
 
           if (!this.secondWaveStart) {
-              this.timer1 = ct.random.range(0.5, 1);
-              ct.templates.copy('boat-01', ct.camera.right + 50, ct.random.range(ct.camera.bottom - 50, ct.camera.bottom - 140));
+              this.timer1 = ct.random.range(0.5, 2);
+              ct.templates.copy('boat-01', ct.camera.right + 50, ct.random.range(ct.camera.bottom - 50, ct.camera.bottom - 300));
           }
         arguments:
           name: boats
@@ -2108,7 +2261,7 @@ rooms:
         code: |-
           // creates whirlpool when in-game screen is not paused
           if (ct.pixiApp.ticker.speed != 0 && !this.whirlpoolDisabled) {
-              ct.templates.copy('whirlpool', 800, 650);
+              ct.templates.copy('whirlpool', 800, 500);
           }
         arguments:
           action: createWhirlpool
@@ -2126,8 +2279,8 @@ rooms:
         code: |-
           this.secondWaveStart = true;
           if (!this.thirdWaveStart) {
-              this.timer2 = ct.random.range(0.6, 2);
-              ct.templates.copy('boat-02', ct.camera.right + 50, ct.random.range(ct.camera.bottom - 60, ct.camera.bottom - 150));
+              this.timer2 = ct.random.range(2, 5);
+              ct.templates.copy('boat-02', ct.camera.right + 50, ct.random.range(ct.camera.bottom - 60, ct.camera.bottom - 300));
           }
         arguments:
           name: 2ndwave
@@ -2138,10 +2291,10 @@ rooms:
           this.thirdWaveStart = true;
 
 
-          this.timer3 = ct.random.range(0.2, 0.5);
+          //this.timer3 = ct.random.range(0.2, 0.5);
 
           ct.templates.copy('boat-03', ct.camera.right + 50,
-          ct.random.range(ct.camera.bottom - 50, ct.camera.bottom - 140));
+          ct.random.range(ct.camera.bottom - 50, ct.camera.bottom - 300));
         arguments:
           name: 3rdwave
           isUi: false
@@ -2168,48 +2321,48 @@ rooms:
     restrictMaxY: 720
     restrictMinY: 720
     isUi: false
-    name: ending
+    name: win
     backgroundColor: '#627D71'
     follow: -1
-    backgrounds: []
-    copies:
-      - x: 1152
-        'y': 640
-        opacity: 1
-        tint: 16777215
-        scale:
-          x: 1
-          'y': 1
-        rotation: 0
-        uid: LhNf3TC4gNPQjn
-        exts: {}
-        customProperties: {}
+    backgrounds:
+      - depth: -5
+        texture: Bm7N6GBKbgpJTc
+        shiftX: 0
+        shiftY: 0
+        parallaxX: 1
+        parallaxY: 1
+        movementX: 0
+        movementY: 0
+        scaleX: 1
+        scaleY: 1
+        repeat: no-repeat
+    copies: []
     tiles: []
     extends: {}
-    lastmod: 1706944119491
+    lastmod: 1707183867866
     events:
       - eventKey: OnRoomStart
         code: |-
-          // when room starts, begin bringing up cutscenes
-          this.timer1 = 1;
+          // // when room starts, begin bringing up cutscenes
+          // this.timer1 = 1;
 
-          // show one picture on top left corner
-          //var panel1x = 200;
-          var panel1y = 150;
+          // // show one picture on top left corner
+          // //var panel1x = 200;
+          // var panel1y = 150;
 
-          // second panel
-          ct.templates.copy('panel1', 500, panel1y)
+          // // second panel
+          // ct.templates.copy('panel1', 500, panel1y)
 
 
-          // third panel
-          ct.templates.copy('panel1', 900, panel1y);
+          // // third panel
+          // ct.templates.copy('panel1', 900, panel1y);
         arguments: {}
         lib: core
       - eventKey: Timer1
         code: |-
-          var panel1y = 150;
-          //ct.transition.fadeIn();
-          ct.templates.copy('panel1', 100, panel1y);
+          // var panel1y = 150;
+          // //ct.transition.fadeIn();
+          // ct.templates.copy('panel1', 100, panel1y);
         arguments:
           name: panel1
           isUi: false
@@ -2237,20 +2390,20 @@ rooms:
     follow: -1
     backgrounds: []
     copies:
-      - x: 72
-        'y': 668.5
+      - x: 1214.35714286
+        'y': 52.75
         opacity: 1
-        tint: 16777215
+        tint: 12752277
         scale:
-          x: 1
-          'y': 1
+          x: 0.4
+          'y': 0.4
         rotation: 0
         uid: 91DW7djp43CBwz
         exts: {}
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707086014120
+    lastmod: 1707184779068
     events: []
     uid: 3kN7wdFdNd5LNg
   - type: room
@@ -2288,7 +2441,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707074709755
+    lastmod: 1707184100666
     events: []
     uid: CmDWKwPzNf4P9Q
   - type: room
@@ -2311,7 +2464,18 @@ rooms:
     name: UI_Paused
     backgroundColor: '#485E1C'
     follow: -1
-    backgrounds: []
+    backgrounds:
+      - depth: 0
+        texture: fk6wKCkr2LkG4W
+        shiftX: 0
+        shiftY: 0
+        parallaxX: 1
+        parallaxY: 1
+        movementX: 0
+        movementY: 0
+        scaleX: 1
+        scaleY: 1
+        repeat: no-repeat
     copies:
       - x: 614
         'y': 367.5
@@ -2326,7 +2490,7 @@ rooms:
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707078156383
+    lastmod: 1707184103366
     events: []
     uid: 8P2MN4BWPPjrt9
   - type: room
@@ -2349,10 +2513,21 @@ rooms:
     name: UI_Lost
     backgroundColor: '#9E2325'
     follow: -1
-    backgrounds: []
+    backgrounds:
+      - depth: -5
+        texture: DhrF4rMtpk48QM
+        shiftX: 0
+        shiftY: 0
+        parallaxX: 1
+        parallaxY: 1
+        movementX: 0
+        movementY: 0
+        scaleX: 1
+        scaleY: 1
+        repeat: no-repeat
     copies:
-      - x: 512
-        'y': 192
+      - x: 902
+        'y': 208.25
         opacity: 1
         tint: 16777215
         scale:
@@ -2362,20 +2537,20 @@ rooms:
         uid: pGzp6dncPMct4k
         exts: {}
         customProperties: {}
-      - x: 576
-        'y': 384
+      - x: 950
+        'y': 322.25
         opacity: 1
         tint: 16777215
         scale:
-          x: 1
-          'y': 1
+          x: 1.415
+          'y': 1.05
         rotation: 0
         uid: 3gH7HC5Fn5zmrF
         exts: {}
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1707080260181
+    lastmod: 1707180230955
     events: []
     uid: 637TTdHRW2qBqc
 actions:
