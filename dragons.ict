@@ -3111,11 +3111,11 @@ groups:
   emitterTandems: []
 settings:
   authoring:
-    author: Bardic Blaze Interactive
+    author: Bardic Blaze
     site: ''
-    title: Dragons and stocks
+    title: Flowers Under A Stormy Night
     version:
-      - 0
+      - 1
       - 0
       - 0
     versionPostfix: ''
